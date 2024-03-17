@@ -4,6 +4,8 @@ This is my local vim/nvim config using lua.
 
 To work properly this repo should be cloned on `~/.config/nvim` and [packer.vim](https://github.com/wbthomason/packer.nvim) must be installed.
 
+The Neovim version `0.9` is compatible with the configuration.
+
 To install it just run:
 
 ```bash
