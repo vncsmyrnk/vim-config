@@ -6,3 +6,4 @@ vim.keymap.set("v", "<leader>y", '\"+y')
 vim.keymap.set("n", "<leader>yl", ':y<CR>')
 vim.keymap.set("n", "<leader><tab>", ':b#<CR>')
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
+vim.opt.clipboard="unnamedplus"
