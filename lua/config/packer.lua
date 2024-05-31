@@ -51,4 +51,11 @@ return require('packer').startup(function(use)
   }
 
   use 'mfussenegger/nvim-jdtls'
+
+  use 'folke/trouble.nvim'
+
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
 end)

@@ -1,0 +1,6 @@
+require('trouble').setup()
+vim.keymap.set("n", "<leader>xx", "<Cmd>Trouble diagnostics toggle<CR>")
+vim.keymap.set("n", "<leader>cs", "<Cmd>Trouble symbols toggle focus=false<CR>")
+vim.keymap.set("n", "<leader>cl", "<Cmd>Trouble lsp toggle focus=false win.position=right<CR>")
+vim.keymap.set("n", "<leader>xL", "<Cmd>Trouble loclist toggle<CR>")
+vim.keymap.set("n", "<leader>xQ", "<Cmd>Trouble qflist toggle<CR>")
