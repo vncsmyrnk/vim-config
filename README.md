@@ -17,4 +17,6 @@ git clone --depth 1 https://github.com/vncsmyrnk/vim-config.git /.config/nvim
 
 To install neovim and apply the config, run the `install-apt.sh` script.
 
-Based on @ThePrimeagen
+## Credits
+
+Based on [@ThePrimeagen](https://github.com/ThePrimeagen)'s config.
