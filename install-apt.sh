@@ -2,15 +2,15 @@
 
 apt update
 
-echo "Installing neovim dependecies (neovim, gcc, wget)..."
-apt install fuse libfuse2 build-essential git wget -y
+echo "Installing dependecies..."
+apt install -y build-essential curl tar xargs
 
 echo "Downloading neovim..."
-wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 
 echo "Installing neovim..."
-chmod u+x nvim.appimage
-mv nvim.appimage /usr/local/bin/nvim
+tar -xzf nvim-linux64.tar.gz
+ls nvim-linux64/ | xargs -I {} cp -r nvim-linux64/{}/ /usr/local
 
 echo "Installing packer.vim..."
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim || {
@@ -25,4 +25,5 @@ fi
 git clone --depth 1 https://github.com/vncsmyrnk/vim-config.git $neovim_config_path
 source $neovim_config_path/*/**.lua
 
-echo "neovim is installed and configured"
+echo "neovim is installed and configured. You can now open neovim with 'nvim' command"
+echo "On first run, make sure to execute :PackerSync to install dependencies"
