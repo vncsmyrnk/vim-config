@@ -16,12 +16,17 @@ show_done() {
   echo -e "\033[1;32mDone.\033[0m"
 }
 
+if [ $(id -u) -ne 0 ]; then
+  echo -e "Necessary dependencies: ${apt_dependencies[@]}" > $stdout_file
+  handle_error "This script requires sudo privileges for installing dependencies and nvim itself"
+fi
+
 apt-get update > $stdout_file
 
 echo -e "Installing dependencies via \033[1mapt-get\033[0m..."
 {
   for dependency in ${apt_dependencies[@]}; do
-    apt-get install -y $dependency > $stdout_file 2> $stderr_file || handle_error "A problem occurred when \033[1m$dependency\033[0m"
+    apt-get install -y $dependency > $stdout_file 2> $stderr_file || handle_error "A problem occurred while installing \033[1m$dependency\033[0m"
     echo -e "\033[1m$dependency\033[0m ok"
   done
 }
@@ -55,7 +60,6 @@ echo -e "\nApplying neovim configs..."
 } > $stdout_file 2> $stderr_file || handle_error "Error on applying configs"
 show_done
 
-echo -e "\n"
 echo -e "\033[1;32mInstallation completed.\033[0m"
 echo -e "\033[4mNeovim\033[0m is installed and configured. You can now open neovim with \033[1mnvim\033[0m command"
 echo -e "On first run, make sure to skip the errors and execute \033[1m:PackerSync\033[0m to install dependencies"
