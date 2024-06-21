@@ -3,6 +3,8 @@
 stderr_file=.nvim-installer-error-log
 stdout_file=/dev/null
 
+apt_dependencies=(build-essential curl tar git)
+
 handle_error() {
   echo -e "\n"
   echo -e "\033[1;31m[Error] \033[0m $1"
@@ -16,15 +18,20 @@ show_done() {
 
 apt-get update > $stdout_file
 
-echo -e "\nInstalling dependecies..."
-apt-get install -y build-essential curl tar git > $stdout_file 2> $stderr_file || handle_error "A problem occurred when installing dependencies"
+echo -e "Installing dependencies via \033[1mapt-get\033[0m..."
+{
+  for dependency in ${apt_dependencies[@]}; do
+    apt-get install -y $dependency > $stdout_file 2> $stderr_file || handle_error "A problem occurred when \033[1m$dependency\033[0m"
+    echo -e "\033[1m$dependency\033[0m ok"
+  done
+}
 show_done
 
 echo -e "\nDownloading neovim..."
 curl -sLO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz > $stdout_file 2> $stderr_file || handle_error "Error on downloading neovim"
 show_done
 
-echo "\nInstalling neovim..."
+echo -e "\nInstalling neovim..."
 {
   tar -xzf nvim-linux64.tar.gz
   ls nvim-linux64/ | xargs -I {} cp -r nvim-linux64/{}/ /usr/local
@@ -32,13 +39,13 @@ echo "\nInstalling neovim..."
 } > $stdout_file 2> $stderr_file || handle_error "Error on installing neovim"
 show_done
 
-echo "\nInstalling packer.vim..."
+echo -e "\nInstalling packer.vim..."
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim > $stdout_file 2> $stderr_file || {
   echo "packer already installed"
 }
 show_done
 
-echo "\nApplying neovim configs..."
+echo -e "\nApplying neovim configs..."
 {
   neovim_config_path=~/.config/nvim
   if [ -d $neovim_config_path ]; then
