@@ -11,6 +11,7 @@ curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.
 echo "Installing neovim..."
 tar -xzf nvim-linux64.tar.gz
 ls nvim-linux64/ | xargs -I {} cp -r nvim-linux64/{}/ /usr/local
+rm -rf nvim-linux64*
 
 echo "Installing packer.vim..."
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim || {
