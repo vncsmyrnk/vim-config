@@ -7,7 +7,7 @@ apt_dependencies=(build-essential curl tar git)
 
 handle_error() {
   echo -e "\n"
-  echo -e "\033[1;31m[Error] \033[0m $1"
+  echo -e "\033[1;31m[Error]\033[0m $1"
   echo -e "Check file \033[1m$stderr_file\033[0m for more info"
   exit 1
 }
