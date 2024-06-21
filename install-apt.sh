@@ -1,9 +1,12 @@
 #!/bin/bash
 
+# Exit on errors
+set -e
+
 apt update
 
 echo "Installing dependecies..."
-apt install -y build-essential curl tar xargs
+apt install -y build-essential curl tar git
 
 echo "Downloading neovim..."
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
