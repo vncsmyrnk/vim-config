@@ -17,7 +17,7 @@ show_done() {
 }
 
 if [ $(id -u) -ne 0 ]; then
-  echo -e "Necessary dependencies: ${apt_dependencies[@]}" > $stdout_file
+  echo -e "Necessary dependencies: ${apt_dependencies[@]}" > $stderr_file
   handle_error "This script requires sudo privileges for installing dependencies and nvim itself"
 fi
 
