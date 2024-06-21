@@ -9,7 +9,7 @@ echo "Installing dependecies..."
 apt install -y build-essential curl tar git
 
 echo "Downloading neovim..."
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+curl -sLO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 
 echo "Installing neovim..."
 tar -xzf nvim-linux64.tar.gz
@@ -27,7 +27,6 @@ if [ -d $neovim_config_path ]; then
   rm -rf $neovim_config_path
 fi
 git clone --depth 1 https://github.com/vncsmyrnk/vim-config.git $neovim_config_path
-source $neovim_config_path/*/**.lua
 
 echo "neovim is installed and configured. You can now open neovim with 'nvim' command"
-echo "On first run, make sure to execute :PackerSync to install dependencies"
+echo "On first run, make sure to execute :PackerSync to install dependencies. You may need to run it a couple times and restart neovim in order to complete the installation"
