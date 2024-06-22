@@ -7,7 +7,6 @@ apt_dependencies=(build-essential curl tar git)
 neovim_config_path=~/.config/nvim
 
 handle_error() {
-  echo -e "\n"
   echo -e "\033[1;31m[Error]\033[0m $1"
   echo -e "Check file \033[1m$stderr_file\033[0m for more info"
   exit 1
@@ -27,14 +26,14 @@ apt-get update > $stdout_file
 echo -e "Installing dependencies via \033[1mapt-get\033[0m..."
 {
   for dependency in ${apt_dependencies[@]}; do
-    apt-get install -y $dependency > $stdout_file 2> $stderr_file || handle_error "A problem occurred while installing \033[1m$dependency\033[0m"
+    apt-get install -y $dependency >> $stdout_file 2> $stderr_file || handle_error "A problem occurred while installing \033[1m$dependency\033[0m"
     echo -e "\033[1m$dependency\033[0m ok"
   done
 }
 show_done
 
 echo -e "\nDownloading neovim..."
-curl -sLO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz > $stdout_file 2> $stderr_file || handle_error "Error on downloading neovim"
+curl -sLO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz >> $stdout_file 2> $stderr_file || handle_error "Error on downloading neovim"
 show_done
 
 echo -e "\nInstalling neovim..."
@@ -42,11 +41,11 @@ echo -e "\nInstalling neovim..."
   tar -xzf nvim-linux64.tar.gz
   ls nvim-linux64/ | xargs -I {} cp -r nvim-linux64/{}/ /usr/local
   rm -rf nvim-linux64*
-} > $stdout_file 2> $stderr_file || handle_error "Error on installing neovim"
+} >> $stdout_file 2> $stderr_file || handle_error "Error on installing neovim"
 show_done
 
 echo -e "\nInstalling packer.vim..."
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim > $stdout_file 2> $stderr_file || {
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim >> $stdout_file 2> $stderr_file || {
   echo "packer already installed"
 }
 show_done
@@ -57,7 +56,7 @@ echo -e "\nApplying neovim configs..."
     rm -rf $neovim_config_path
   fi
   git clone --depth 1 https://github.com/vncsmyrnk/vim-config.git $neovim_config_path
-} > $stdout_file 2> $stderr_file || handle_error "Error on applying configs"
+} >> $stdout_file 2> $stderr_file || handle_error "Error on applying configs"
 show_done
 
 echo -e "\033[1;32m\nInstallation completed.\033[0m"
