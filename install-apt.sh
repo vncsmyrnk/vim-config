@@ -5,6 +5,8 @@ stdout_file=/dev/null
 
 apt_dependencies=(build-essential curl tar git)
 neovim_config_path=~/.config/nvim
+user_owner_home=$(ls -ld ~ | cut -d " " -f3)
+group_owner_home=$(ls -ld ~ | cut -d " " -f4)
 
 handle_error() {
   echo -e "\033[1;31m[Error]\033[0m $1"
@@ -48,6 +50,7 @@ echo -e "\nInstalling packer.vim..."
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim >> $stdout_file 2> $stderr_file || {
   echo "packer already installed"
 }
+chown -R $user_owner_home:$group_owner_home ~/.local
 show_done
 
 echo -e "\nApplying neovim configs..."
