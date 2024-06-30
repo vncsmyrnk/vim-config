@@ -27,6 +27,7 @@ To install neovim and apply the config, run the `install-apt.sh` script. To down
 
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/vncsmyrnk/vim-config/main/install-apt.sh)
+```
 
 To install from a specific branch config:
 
