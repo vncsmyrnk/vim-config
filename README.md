@@ -27,6 +27,12 @@ To install neovim and apply the config, run the `install-apt.sh` script. To down
 
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/vncsmyrnk/vim-config/main/install-apt.sh)
+
+To install from a specific branch config:
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/vncsmyrnk/vim-config/{BRANCH}/install-apt.sh)
+```
 ```
 
 Some errors may appear on the first `nvim` run, make sure to close all and run `:PackerSync` to install the plugins. The execution of `:PackerSync` itself may result in errors on first try, run it twice and it will install all plugins. After all of that, restart `nvim`.
