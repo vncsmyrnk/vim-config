@@ -50,8 +50,6 @@ return require('packer').startup(function(use)
     }
   }
 
-  use 'mfussenegger/nvim-jdtls'
-
   use 'folke/trouble.nvim'
 
   use {
