@@ -58,7 +58,7 @@ echo -e "\nApplying neovim configs..."
   if [ -d $neovim_config_path ]; then
     rm -rf $neovim_config_path
   fi
-  git clone --depth 1 https://github.com/vncsmyrnk/vim-config.git $neovim_config_path
+  git clone --depth 1 https://github.com/vncsmyrnk/vim-config.git $neovim_config_path --branch java
 } >> $stdout_file 2> $stderr_file || handle_error "Error on applying configs"
 show_done
 
