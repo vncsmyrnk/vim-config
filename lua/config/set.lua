@@ -13,3 +13,7 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
+
+-- Displays tab/space, trailing whitespace
+vim.o.list = true
+vim.o.listchars = "tab:→\\ ,trail:~,extends:>,precedes:<,space:·"
