@@ -17,7 +17,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'golangci_lint_ls'},
+  ensure_installed = {'gopls'},
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
