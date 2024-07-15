@@ -1,5 +1,6 @@
 require('mason').setup({})
 require('dap')
+require('dapui').setup()
 require('mason-nvim-dap').setup({
   ensure_installed = {'delve'},
   handlers = {
