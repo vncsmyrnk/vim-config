@@ -55,6 +55,10 @@ dap.configurations.go = {
   }
 }
 
+-- Example for running delve and debug: `dlv debug --headless --listen=:2345 --api-version=2 --log cmd/api/main.go`
+-- Then add the breakpoints on the target file and run `:lua require'dap'.continue()` to intiate the debug
+-- Finally, make the requests and check the breakpoints
+
 vim.api.nvim_set_keymap('n', '<F5>', ':lua require\'dap\'.continue()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<F10>', ':lua require\'dap\'.step_over()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<F11>', ':lua require\'dap\'.step_into()<CR>', { noremap = true, silent = true })
