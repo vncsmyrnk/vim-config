@@ -1,49 +1,59 @@
 require('mason').setup({})
-require('dap')
-require('dapui').setup()
 require('mason-nvim-dap').setup({
   ensure_installed = {'delve'},
   handlers = {
     function(config)
       require('mason-nvim-dap').default_setup(config)
     end,
-    -- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#go-using-delve-directly
-    delve = function(config)
-      config.adapters.delve = {
-        type = 'server',
-        port = '${port}',
-        executable = {
-          command = 'dlv',
-          args = {'dap', '-l', '127.0.0.1:${port}'},
-        }
-      }
-      config.configurations.go = {
-        {
-          type = "delve",
-          name = "Debug",
-          request = "launch",
-          program = "${file}"
-        },
-        {
-          type = "delve",
-          name = "Debug test", -- configuration for debugging test files
-          request = "launch",
-          mode = "test",
-          program = "${file}"
-        },
-        -- works with go.mod packages and sub packages 
-        {
-          type = "delve",
-          name = "Debug test (go.mod)",
-          request = "launch",
-          mode = "test",
-          program = "./${relativeFileDirname}"
-        } 
-      }
-      require('mason-nvim-dap').default_setup(config)
-    end,
   }
-}) 
+})
+
+require('dap-go').setup()
+
+local dap = require('dap')
+require('dapui').setup()
+dap.set_log_level('TRACE')
+
+dap.adapters.delve = {
+  type = 'server',
+  port = '2345',
+  executable = {
+    command = 'dlv',
+    args = {'dap', '-l', '127.0.0.1:2345'},
+  }
+}
+
+dap.configurations.go = {
+  {
+    type = "delve",
+    name = "Debug",
+    request = "launch",
+    program = "${file}"
+  },
+  {
+    type = "delve",
+    name = "Debug test",
+    request = "launch",
+    mode = "test",
+    program = "${file}"
+  },
+  {
+    type = "delve",
+    name = "Debug test (go.mod)",
+    request = "launch",
+    mode = "test",
+    program = "./${relativeFileDirname}"
+  },
+  {
+    type = "delve",
+    name = "Attach",
+    request = "attach",
+    mode = "remote",
+    remotePath = "",
+    port = "2345",
+    host = "127.0.0.1",
+  }
+}
 
 vim.api.nvim_set_keymap('n', '<F5>', ':lua require\'dap\'.continue()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<F10>', ':lua require\'dap\'.step_over()<CR>', { noremap = true, silent = true })

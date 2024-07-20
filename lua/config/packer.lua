@@ -51,6 +51,7 @@ return require('packer').startup(function(use)
   }
 
   use 'jay-babu/mason-nvim-dap.nvim'
+  use 'leoluz/nvim-dap-go'
 
   use {
     "rcarriga/nvim-dap-ui",
