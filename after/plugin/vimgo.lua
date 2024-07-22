@@ -1,0 +1,2 @@
+-- To undo possible vim-go global configs
+-- vim.g["go_fmt_autosave"] = 0
