@@ -54,7 +54,10 @@ return require('packer').startup(function(use)
 
   use 'leoluz/nvim-dap-go'
 
-  use 'fatih/vim-go'
+  use {
+    'fatih/vim-go',
+    run = ':GoInstallBinaries'
+  }
 
   use {
     "rcarriga/nvim-dap-ui",
