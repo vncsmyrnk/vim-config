@@ -1,1 +1,6 @@
 plugin/packer_compiled.lua
+
+# Assure that only config folder is versioned
+# ignoring local plugins
+lua/*
+!lua/config
