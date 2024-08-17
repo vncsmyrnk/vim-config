@@ -16,6 +16,9 @@ require("nvim-tree").setup({
   renderer = {
     group_empty = true,
   },
+  diagnostics = {
+    enable = true,
+  },
   filters = {
     dotfiles = false,
   },
@@ -23,4 +26,6 @@ require("nvim-tree").setup({
 
 -- Custom mappings
 local api = require "nvim-tree.api"
-vim.keymap.set('n', '<leader>e', api.tree.toggle, {})
+vim.keymap.set('n', '<leader>ee', api.tree.toggle, {})
+vim.keymap.set('n', '<leader>ef', api.tree.find_file, {})
+vim.keymap.set('n', '<leader>ec', api.tree.collapse_all, {})

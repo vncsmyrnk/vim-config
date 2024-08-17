@@ -9,4 +9,8 @@ vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>h", ':noh<CR>')
 vim.keymap.set("n", "<leader>n", '<C-w><C-w>')
 vim.keymap.set("n", "<leader>q", ':q<CR>')
+vim.keymap.set("n", "<leader>rp", ':resize +10<CR>')
+vim.keymap.set("n", "<leader>rm", ':resize -10<CR>')
+vim.keymap.set("n", "<leader>vrp", ':vertical resize +10<CR>')
+vim.keymap.set("n", "<leader>vrm", ':vertical resize -10<CR>')
 vim.opt.clipboard="unnamedplus"
