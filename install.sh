@@ -71,16 +71,16 @@ before() {
   show_done
 }
 
+config() {
+  if [ ! -d ~/.config/nvim ]; then
+    ln -s $SCRIPT_DIR ~/.config/nvim
+  fi
+}
+
 symbolic_install() {
   before
-
-  if [ -d ~/.config/nvim ]; then
-    handle_error "An existing config exists at \033[1m$HOME/.config/nvim\033[0m"
-  else
-    echo -e "\nApplying neovim configs..."
-    ln -s $SCRIPT_DIR ~/.config/nvim
-    echo -e "\033[1;32mDone.\033[0m"
-  fi
+  config
+  echo -e "\033[1;32mDone.\033[0m"
 }
 
 install() {
