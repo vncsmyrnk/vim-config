@@ -1,1 +1,8 @@
+\.git
+\.gitignore
+
+^/README.*
+^/LICENSE.*
+
 justfile
+update-branches-from-main.sh
