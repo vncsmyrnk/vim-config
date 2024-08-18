@@ -2,13 +2,13 @@
 ![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
 ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
-# vim/nvim config
+# vim/nvim Config
 
 This is my local vim/nvim config using lua.
 
 Check [branches](https://github.com/vncsmyrnk/vim-config/branches) section for language specific configurations.
 
-To work properly this repo should be cloned on `~/.config/nvim` and [packer.vim](https://github.com/wbthomason/packer.nvim) must be installed.
+To work properly this repo should be cloned/copied to `~/.config/nvim` and [packer.vim](https://github.com/wbthomason/packer.nvim) must be installed.
 
 The Neovim versions `0.9` and `0.10` are compatible with the configuration.
 
