@@ -3,8 +3,6 @@
 # local_branches=$(git branch | sed 's/\*//' | grep -v 'main')
 local_branches=(go)
 
-cd ~/dotfiles/vim-config
-
 git pull --all
 git checkout main
 git pull origin main
