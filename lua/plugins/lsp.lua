@@ -74,9 +74,14 @@ return {
         capabilities = require("cmp_nvim_lsp").default_capabilities()
       })
 
+      local must_install = {"lua_ls"}
+      if vim.fn.executable("go") then
+        table.insert(must_install, "gopls")
+      end
+
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = {"lua_ls"},
+        ensure_installed = must_install,
         handlers = {
           function(server_name)
             require("lspconfig")[server_name].setup({})
