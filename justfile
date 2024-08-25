@@ -2,7 +2,7 @@ default:
   just --list
 
 install-deps:
-  sudo apt install build-essential curl tar git
+  sudo apt install build-essential curl tar git ripgrep stow
   if ! type brew; then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; fi
 
 install-reqs: install-deps
