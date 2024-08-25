@@ -10,6 +10,7 @@ return {
 
   {
     "nvim-telescope/telescope.nvim",
+    tag = '0.1.8',
     dependencies = {
       {"nvim-telescope/telescope-live-grep-args.nvim", version = "^1.0.0"},
     },
@@ -111,14 +112,23 @@ return {
   },
 
   {
-    "rhysd/git-messenger.vim",
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
     config = function()
-      vim.api.nvim_del_keymap("n", "<Leader>gm")
+      require'nvim-treesitter.configs'.setup {
+        ensure_installed = {},
+        sync_install = false,
+        auto_install = true,
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = false,
+        },
+      }
     end,
   },
 
+  {"rhysd/git-messenger.vim"},
   {"echasnovski/mini.pairs"},
   {"sindrets/diffview.nvim"},
-  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
   {"echasnovski/mini.nvim", version = "*"},
 }

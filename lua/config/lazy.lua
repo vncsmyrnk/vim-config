@@ -28,3 +28,5 @@ require("lazy").setup({
 	install = {colorscheme = {"habamax"}},
 	checker = {enabled = true},
 })
+
+require("config.autocmds")
