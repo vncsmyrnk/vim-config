@@ -77,6 +77,7 @@ return {
       {"<leader>dr", "<cmd>lua require\"dap\".repl.open()<CR>", { noremap = true, silent = true }},
       {"<leader>dl", "<cmd>lua require\"dap\".run_last()<CR>", { noremap = true, silent = true }},
       {"<leader>du", "<cmd>lua require\"dapui\".toggle()<CR>", { noremap = true, silent = true }},
+      {"<leader>de", "<cmd>lua require\"dapui\".eval()<CR>", { noremap = true, silent = true }},
     },
   },
 }

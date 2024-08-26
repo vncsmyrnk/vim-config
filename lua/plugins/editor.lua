@@ -60,6 +60,7 @@ return {
         {"<leader>dr", desc = "DAP: Open REPL" },
         {"<leader>dl", desc = "DAP: Run last" },
         {"<leader>du", desc = "DAP: Toggle UI" },
+        {"<leader>de", desc = "DAP: Eval under the cursor" },
       },
     },
     keys = {
