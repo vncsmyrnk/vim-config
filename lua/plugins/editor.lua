@@ -173,6 +173,7 @@ return {
     },
     dependencies = {
       "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
     },
     keys = {
       {"<leader>snl", function() require("noice").cmd("last") end, desc = "Noice Last Message"},
