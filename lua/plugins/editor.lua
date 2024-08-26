@@ -152,6 +152,9 @@ return {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
+      messages = {
+        enabled = false,
+      },
       lsp = {
         override = {
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
@@ -169,7 +172,6 @@ return {
     },
     dependencies = {
       "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
     },
     keys = {
       {"<leader>snl", function() require("noice").cmd("last") end, desc = "Noice Last Message"},
