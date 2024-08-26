@@ -149,6 +149,7 @@ return {
   },
 
   {"rhysd/git-messenger.vim"},
+  {"rest-nvim/rest.nvim"},
   {"echasnovski/mini.pairs"},
   {"sindrets/diffview.nvim"},
   {"echasnovski/mini.nvim", version = "*"},
