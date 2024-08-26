@@ -1,3 +1,8 @@
+local must_install = {}
+if vim.fn.executable("go") == 1 then
+  table.insert(must_install, "delve")
+end
+
 return {
   {
     "rcarriga/nvim-dap-ui",
@@ -7,11 +12,6 @@ return {
       {"jay-babu/mason-nvim-dap.nvim"},
     },
     config = function()
-      local must_install = {}
-      if vim.fn.executable("go") then
-        table.insert(must_install, "delve")
-      end
-
       require("mason").setup({})
       require("mason-nvim-dap").setup({
         ensure_installed = must_install,
@@ -68,15 +68,15 @@ return {
       }
     end,
     keys = {
-      {"<F5>", "<cmd>lua require\"dap\".continue()<CR>", { noremap = true, silent = true, desc = "DAP: Continue" }},
-      {"<F10>", "<cmd>lua require\"dap\".step_over()<CR>", { noremap = true, silent = true, desc = "DAP: Step over" }},
-      {"<F11>", "<cmd>lua require\"dap\".step_into()<CR>", { noremap = true, silent = true, desc = "DAP: Step into" }},
-      {"<F12>", "<cmd>lua require\"dap\".step_out()<CR>", { noremap = true, silent = true, desc = "DAP: Step out" }},
-      {"<leader>b", "<cmd>lua require\"dap\".toggle_breakpoint()<CR>", { noremap = true, silent = true, desc = "DAP: Toggle breakpoint" }},
+      {"<F5>", "<cmd>lua require\"dap\".continue()<CR>", { noremap = true, silent = true }},
+      {"<F10>", "<cmd>lua require\"dap\".step_over()<CR>", { noremap = true, silent = true }},
+      {"<F11>", "<cmd>lua require\"dap\".step_into()<CR>", { noremap = true, silent = true }},
+      {"<F12>", "<cmd>lua require\"dap\".step_out()<CR>", { noremap = true, silent = true }},
+      {"<leader>b", "<cmd>lua require\"dap\".toggle_breakpoint()<CR>", { noremap = true, silent = true }},
       {"<leader>B", "<cmd>lua require\"dap\".set_breakpoint(vim.fn.input(\"Breakpoint condition: \"))<CR>", { noremap = true, silent = true }},
-      {"<leader>dr", "<cmd>lua require\"dap\".repl.open()<CR>", { noremap = true, silent = true, desc = "DAP: Open REPL" }},
-      {"<leader>dl", "<cmd>lua require\"dap\".run_last()<CR>", { noremap = true, silent = true, desc = "DAP: Run last" }},
-      {"<leader>du", "<cmd>lua require\"dapui\".toggle()<CR>", { noremap = true, silent = true, desc = "DAP: Toggle UI" }},
+      {"<leader>dr", "<cmd>lua require\"dap\".repl.open()<CR>", { noremap = true, silent = true }},
+      {"<leader>dl", "<cmd>lua require\"dap\".run_last()<CR>", { noremap = true, silent = true }},
+      {"<leader>du", "<cmd>lua require\"dapui\".toggle()<CR>", { noremap = true, silent = true }},
     },
   },
 }

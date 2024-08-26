@@ -1,3 +1,8 @@
+local must_install = {"lua_ls"}
+if vim.fn.executable("go") == 1 then
+  table.insert(must_install, "gopls")
+end
+
 return {
   {
     "VonHeikemen/lsp-zero.nvim",
@@ -55,16 +60,18 @@ return {
       local lsp_zero = require("lsp-zero")
 
       local lsp_attach = function(_, bufnr)
-        vim.keymap.set("n", "gK", "<cmd>lua vim.lsp.buf.hover()<cr>", {buffer = bufnr, desc = "LSP: Hover"})
-        vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", {buffer = bufnr, desc = "LSP: Go to definition"})
-        vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", {buffer = bufnr, desc = "LSP: Go to declaration"})
-        vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", {buffer = bufnr, desc = "LSP: Go to implementation"})
-        vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", {buffer = bufnr, desc = "LSP: Go to type definition"})
-        vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", {buffer = bufnr, desc = "LSP: Go to references"})
-        vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", {buffer = bufnr, desc = "LSP: Signature help"})
-        vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", {buffer = bufnr, desc = "LSP: Buffer rename"})
-        vim.keymap.set({"n", "x"}, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", {buffer = bufnr, desc = "LSP: Buffer format"})
-        vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", {buffer = bufnr, desc = "LSP: Code actions"})
+        local opts = {buffer = bufnr}
+
+        vim.keymap.set("n", "gK", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
+        vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
+        vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
+        vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
+        vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
+        vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
+        vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
+        vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+        vim.keymap.set({"n", "x"}, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
+        vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
       end
 
       lsp_zero.extend_lspconfig({
@@ -73,11 +80,6 @@ return {
         float_border = "rounded",
         capabilities = require("cmp_nvim_lsp").default_capabilities()
       })
-
-      local must_install = {"lua_ls"}
-      if vim.fn.executable("go") then
-        table.insert(must_install, "gopls")
-      end
 
       require("mason").setup()
       require("mason-lspconfig").setup({

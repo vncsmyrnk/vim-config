@@ -1,16 +1,12 @@
+if vim.fn.executable("go") == 0 then
+  return {}
+end
+
 return {
-  {
-    "leoluz/nvim-dap-go",
-    enabled = function()
-      vim.fn.executable("go")
-    end,
-  },
+  {"leoluz/nvim-dap-go"},
 
   {
     "fatih/vim-go",
     build = ":GoInstallBinaries",
-    enabled = function()
-      vim.fn.executable("go")
-    end,
   }
 }

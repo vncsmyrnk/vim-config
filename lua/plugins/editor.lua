@@ -41,6 +41,26 @@ return {
         {"<leader>v", group = "Git"},
         {"<leader>g", group = "LSP"},
         {"<leader>q", group = "Quit"},
+
+        {"gK", desc = "LSP: Hover"},
+        {"gd", desc = "LSP: Go to definition"},
+        {"gD", desc = "LSP: Go to declaration"},
+        {"gi", desc = "LSP: Go to implementation"},
+        {"go", desc = "LSP: Go to type definition"},
+        {"gr", desc = "LSP: Go to references"},
+        {"gs", desc = "LSP: Signature help"},
+        {"<F2>", desc = "LSP: Buffer rename"},
+        {"<F3>", desc = "LSP: Buffer format"},
+        {"<F4>", desc = "LSP: Code actions"},
+
+        {"<F5>", desc = "DAP: Continue" },
+        {"<F10>", desc = "DAP: Step over" },
+        {"<F11>", desc = "DAP: Step into" },
+        {"<F12>", desc = "DAP: Step out" },
+        {"<leader>b", desc = "DAP: Toggle breakpoint" },
+        {"<leader>dr", desc = "DAP: Open REPL" },
+        {"<leader>dl", desc = "DAP: Run last" },
+        {"<leader>du", desc = "DAP: Toggle UI" },
       },
     },
     keys = {
@@ -71,6 +91,7 @@ return {
 
   {
     "tpope/vim-fugitive",
+    lazy = false,
     keys = {
       {"<leader>vs", "<cmd>Git<cr>", desc = "Fugitive: Git status"}
     }
