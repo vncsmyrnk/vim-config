@@ -10,7 +10,7 @@ return {
 
   {
     "nvim-telescope/telescope.nvim",
-    tag = '0.1.8',
+    tag = "0.1.8",
     dependencies = {
       {"nvim-telescope/telescope-live-grep-args.nvim", version = "^1.0.0"},
     },
@@ -29,9 +29,10 @@ return {
       {"<leader>fs", "<cmd>Telescope search_history<cr>", desc = "Telescope: Search history"},
       {"<leader>fgc", "<cmd>Telescope git_commits<cr>", desc = "Telescope: Git commits"},
       {"<leader>fgs", "<cmd>Telescope git_status<cr>", desc = "Telescope: Git status"},
-      {"<leader>fgr", "<cmd>Telescope git_branches<cr>", desc = "Telescope: Git branches"},
+      {"<leader>fgb", "<cmd>Telescope git_branches<cr>", desc = "Telescope: Git branches"},
       {"<C-p>", function() require("telescope.builtin").git_files() end, desc = "Telescope: Git project files"},
     },
+    lazy = false,
   },
 
   {
@@ -141,7 +142,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
-      require'nvim-treesitter.configs'.setup {
+      require"nvim-treesitter.configs".setup {
         ensure_installed = {},
         sync_install = false,
         auto_install = true,
@@ -190,7 +191,33 @@ return {
   {
     "echasnovski/mini.pairs",
     config = function()
-      require('mini.pairs').setup()
+      require("mini.pairs").setup()
+    end,
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    opts = {}
+  },
+
+  {
+    "nvimdev/dashboard-nvim",
+    event = "VimEnter",
+    config = function()
+      require("dashboard").setup {
+        config = {
+          week_header = {
+            enable = true,
+          },
+          shortcut = {
+            { desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
+          },
+          packages = { enable = true },
+          project = { enable = true, limit = 8, label = "Recent projects", action = "Telescope find_files cwd=" },
+          mru = { limit = 10, label = "Recent files", cwd_only = false },
+          footer = {},
+        }
+      }
     end,
   },
 
