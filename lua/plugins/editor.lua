@@ -50,6 +50,7 @@ return {
         {"gd", desc = "LSP: Go to definition"},
         {"gD", desc = "LSP: Go to declaration"},
         {"gi", desc = "LSP: Go to implementation"},
+        {"gO", desc = "LSP: List diagnostics"},
         {"go", desc = "LSP: Go to type definition"},
         {"gr", desc = "LSP: Go to references"},
         {"gs", desc = "LSP: Signature help"},
