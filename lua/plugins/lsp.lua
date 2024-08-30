@@ -1,3 +1,7 @@
+-- @TODO: Check https://github.com/stevearc/conform.nvim for using formatters
+-- @TODO: Find linters
+-- @TODO: Make `must_install` config centralized and not automatically installed
+
 local must_install = {"lua_ls"}
 if vim.fn.executable("go") == 1 then
   table.insert(must_install, "gopls")
