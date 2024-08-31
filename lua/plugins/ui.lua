@@ -18,6 +18,7 @@ return {
       local telescope = require("telescope")
       telescope.setup()
       telescope.load_extension("live_grep_args")
+      require("telescope").load_extension("rest")
     end,
     keys = {
       { "<leader>ff",  function() require("telescope.builtin").find_files() end,                                               desc = "Telescope: Fuzzy finder" },
@@ -30,6 +31,7 @@ return {
       { "<leader>fgc", "<cmd>Telescope git_commits<cr>",                                                                       desc = "Telescope: Git commits" },
       { "<leader>fgs", "<cmd>Telescope git_status<cr>",                                                                        desc = "Telescope: Git status" },
       { "<leader>fgb", "<cmd>Telescope git_branches<cr>",                                                                      desc = "Telescope: Git branches" },
+      { "<leader>fer", function() require("telescope").extensions.rest.select_env() end,                                       desc = "Telescope: Rest environment select" },
       { "<C-p>",       function() require("telescope.builtin").git_files() end,                                                desc = "Telescope: Git project files" },
     },
     lazy = false,
@@ -42,6 +44,8 @@ return {
       preset = "modern",
       spec = {
         { "<leader>f",  group = "File find" },
+        { "<leader>fg", group = "File find (Git)" },
+        { "<leader>fe", group = "File find (environment)" },
         { "<leader>e",  group = "File explorer" },
         { "<leader>g",  group = "Git" },
         { "<leader>q",  group = "Quit" },
