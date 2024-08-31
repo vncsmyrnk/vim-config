@@ -6,11 +6,9 @@
 
 This is my local vim/nvim config using lua.
 
-Check [branches](https://github.com/vncsmyrnk/vim-config/branches) section for language specific configurations.
-
 To work properly this repo should be cloned/copied to `~/.config/nvim`. [lazy.nvim](https://github.com/folke/lazy.nvim) is used as a plugin manager.
 
-The Neovim versions `0.9` and `0.10` are compatible with the configuration.
+The Neovim versions `0.9` and `0.10` are compatible with this configuration.
 
 ## Install
 
@@ -19,15 +17,3 @@ This project uses [just](https://github.com/casey/just) and [stow](https://www.g
 ```bash
 just install
 ```
-
-Considering `nvim` and `packer` are already installed, you can just run:
-
-```bash
-just config
-```
-
-After the installation, feel free to change branches for different configs.
-
-## Notes
-
-This is a _lazy_ version of [custom-go-php](https://github.com/vncsmyrnk/vim-config/tree/custom-go-php).
