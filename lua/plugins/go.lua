@@ -3,7 +3,7 @@ if vim.fn.executable("go") == 0 then
 end
 
 return {
-  {"leoluz/nvim-dap-go"},
+  { "leoluz/nvim-dap-go" },
 
   {
     "fatih/vim-go",

@@ -1,11 +1,8 @@
--- @TODO: Check https://github.com/stevearc/conform.nvim for using formatters
--- @TODO: Find linters
--- @TODO: Make `must_install` config centralized and not automatically installed
-
-local must_install = {"lua_ls"}
-if vim.fn.executable("go") == 1 then
-  table.insert(must_install, "gopls")
-end
+local must_install = { "lua_ls" }
+if vim.fn.executable("go") == 1 then table.insert(must_install, "gopls") end
+if vim.fn.executable("php") == 1 then table.insert(must_install, "intelephense") end
+if vim.fn.executable("python") == 1 then table.insert(must_install, "pylsp") end
+if vim.fn.executable("rustc") == 1 then table.insert(must_install, "rust_analyzer") end
 
 return {
   {
@@ -19,17 +16,17 @@ return {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
-      {"L3MON4D3/LuaSnip"},
+      { "L3MON4D3/LuaSnip" },
     },
     config = function()
       local cmp = require("cmp")
 
       cmp.setup({
         sources = {
-          {name = "path"},
-          {name = "nvim_lsp"},
-          {name = "luasnip", keyword_length = 2},
-          {name = "buffer", keyword_length = 3},
+          { name = "path" },
+          { name = "nvim_lsp" },
+          { name = "luasnip", keyword_length = 2 },
+          { name = "buffer",  keyword_length = 3 },
         },
         window = {
           completion = cmp.config.window.bordered(),
@@ -54,17 +51,17 @@ return {
     "neovim/nvim-lspconfig",
     cmd = "LspInfo",
     lazy = false,
-    event = {"BufReadPre", "BufNewFile"},
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-      {"hrsh7th/cmp-nvim-lsp"},
-      {"williamboman/mason.nvim"},
-      {"williamboman/mason-lspconfig.nvim"},
+      { "hrsh7th/cmp-nvim-lsp" },
+      { "williamboman/mason.nvim" },
+      { "williamboman/mason-lspconfig.nvim" },
     },
     config = function()
       local lsp_zero = require("lsp-zero")
 
       local lsp_attach = function(_, bufnr)
-        local opts = {buffer = bufnr}
+        local opts = { buffer = bufnr }
 
         vim.keymap.set("n", "gK", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
         vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
@@ -75,7 +72,7 @@ return {
         vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
         vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
         vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-        vim.keymap.set({"n", "x"}, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
+        vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
         vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
       end
 
@@ -100,7 +97,7 @@ return {
         settings = {
           Lua = {
             diagnostics = {
-              globals = {"vim"}
+              globals = { "vim" }
             }
           }
         }
@@ -113,12 +110,12 @@ return {
     opts = {},
     cmd = "Trouble",
     keys = {
-      {"<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)"},
-      {"<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)"},
-      {"<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", desc = "Symbols (Trouble)"},
-      {"<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", desc = "LSP Definitions / references / ... (Trouble)"},
-      {"<leader>xL", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)"},
-      {"<leader>xQ", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)"},
+      { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>",                        desc = "Diagnostics (Trouble)" },
+      { "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",           desc = "Buffer Diagnostics (Trouble)" },
+      { "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>",                desc = "Symbols (Trouble)" },
+      { "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", desc = "LSP Definitions / references / ... (Trouble)" },
+      { "<leader>xL", "<cmd>Trouble loclist toggle<cr>",                            desc = "Location List (Trouble)" },
+      { "<leader>xQ", "<cmd>Trouble qflist toggle<cr>",                             desc = "Quickfix List (Trouble)" },
     },
   },
 }
