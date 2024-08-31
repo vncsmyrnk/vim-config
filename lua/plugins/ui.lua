@@ -216,5 +216,6 @@ return {
     end,
   },
 
+  { "rest-nvim/rest.nvim" },
   { "sindrets/diffview.nvim" },
 }
