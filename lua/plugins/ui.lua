@@ -128,7 +128,10 @@ return {
               "filename",
               path = 1
             }
-          }
+          },
+          lualine_x = {
+            "rest"
+          },
         }
 
       }
