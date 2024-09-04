@@ -29,9 +29,11 @@ return {
     end,
   },
 
+  -- Disabled due to highlight colors conflict with "fatih/vim-go"
   {
     "folke/todo-comments.nvim",
-    opts = {}
+    opts = {},
+    enabled = false,
   },
 
   { "rhysd/git-messenger.vim" },
