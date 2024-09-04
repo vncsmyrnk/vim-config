@@ -17,5 +17,5 @@ config:
 delete-config:
   stow -D -t {{home_dir()}}/.config/nvim .
 
-clear-lazy:
+clean-lazy:
   rm -rf ~/.local/share/nvim/lazy
