@@ -6,7 +6,7 @@ install-deps:
   if ! type brew; then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; fi
 
 install-reqs: install-deps
-  brew install luarocks neovim
+  brew install luarocks neovim gh
 
 install: install-reqs config
 

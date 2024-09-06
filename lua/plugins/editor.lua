@@ -22,6 +22,9 @@ return {
     end,
   },
 
+  -- TODO: Use nvim-treesitter/nvim-treesitter-textobjects
+  -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+
   {
     "echasnovski/mini.pairs",
     config = function()
@@ -33,6 +36,4 @@ return {
     "folke/todo-comments.nvim",
     opts = {},
   },
-
-  { "rhysd/git-messenger.vim" },
 }
