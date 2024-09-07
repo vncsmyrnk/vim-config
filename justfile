@@ -8,7 +8,7 @@ install-deps:
 install-reqs: install-deps
   brew install luarocks neovim gh
 
-install: install-reqs config
+install: install-reqs config config-gh
 
 config:
   mkdir -p {{home_dir()}}/.config/nvim
@@ -16,6 +16,9 @@ config:
 
 delete-config:
   stow -D -t {{home_dir()}}/.config/nvim .
+
+config-gh:
+  if [[ ! $(gh auth status) ]]; then gh auth login; fi
 
 clean-lazy:
   rm -rf ~/.local/share/nvim/lazy

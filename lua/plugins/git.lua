@@ -19,7 +19,7 @@ return {
     "pwntester/octo.nvim",
     config = function()
       require("octo").setup {
-        default_remote = { "upstream", "studiosol", "origin" },
+        default_remote = { "upstream", "origin", "studiosol" },
       }
     end,
   },
