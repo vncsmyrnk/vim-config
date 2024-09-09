@@ -216,6 +216,15 @@ return {
     end,
   },
 
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = true,
+    keys = {
+      { "<leader>t", vim.cmd.ToggleTerm, desc = "Open terminal" },
+    },
+  },
+
   -- INFO: https://www.jetbrains.com/help/idea/exploring-http-syntax.html
   { "rest-nvim/rest.nvim" },
   { "sindrets/diffview.nvim" },
