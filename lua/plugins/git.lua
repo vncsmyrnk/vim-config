@@ -9,9 +9,14 @@ return {
 
   {
     "lewis6991/gitsigns.nvim",
+    event = "BufEnter",
     config = function()
       require("gitsigns").setup()
     end,
+    keys = {
+      { "]c", "<cmd>Gitsigns next_hunk<cr>", desc = "Gitsigns: Next hunk" },
+      { "[c", "<cmd>Gitsigns prev_hunk<cr>", desc = "Gitsigns: Previous hunk" },
+    }
   },
 
   -- TODO: Add scripts for installing gh and config it
