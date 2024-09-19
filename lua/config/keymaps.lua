@@ -24,3 +24,8 @@ vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increa
 
 -- Lazy
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
+
+-- Language Specific
+
+-- PHP
+vim.keymap.set("n", "<leader>ipe", "oerror_log(print_r($obj, true));", { desc = "Insert error_log debug stmt" })

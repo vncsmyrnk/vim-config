@@ -50,6 +50,8 @@ return {
         { "<leader>e",  group = "File explorer" },
         { "<leader>g",  group = "Git" },
         { "<leader>q",  group = "Quit" },
+        { "<leader>i",  group = "Insert snippets" },
+        { "<leader>ip", group = "Insert snippets (PHP)" },
 
         { "gK",         desc = "LSP: Hover" },
         { "gd",         desc = "LSP: Go to definition" },
