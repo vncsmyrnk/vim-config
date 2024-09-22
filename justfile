@@ -7,11 +7,11 @@ default:
 install-deps:
   #!/bin/bash
   if [ "{{os_full}}" = "debian" ]; then
-    sudo apt-get install build-essential curl tar git ripgrep stow
+    sudo apt-get install build-essential curl tar git ripgrep stow xclip
     if ! type brew; then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; fi
     brew install luarocks neovim gh
   elif [ "{{os_full}}" = "arch" ]; then
-    sudo pacman -S base-devel curl tar git ripgrep stow luarocks neovim github-cli
+    sudo pacman -S base-devel curl tar git ripgrep stow luarocks neovim github-cli xclip
   fi
 
 install: install-deps config config-gh
