@@ -9,9 +9,9 @@ install-deps:
   if [ "{{os_full}}" = "debian" ]; then
     sudo apt-get install build-essential curl tar git ripgrep stow xclip
     if ! type brew; then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; fi
-    brew install luarocks neovim gh
+    brew install luarocks neovim gh lazygit
   elif [ "{{os_full}}" = "arch" ]; then
-    sudo pacman -S base-devel curl tar git ripgrep stow luarocks neovim github-cli xclip
+    sudo pacman -S base-devel curl tar git ripgrep stow luarocks neovim github-cli xclip lazygit
   fi
 
 install: install-deps config config-gh
