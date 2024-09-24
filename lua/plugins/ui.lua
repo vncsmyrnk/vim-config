@@ -74,6 +74,7 @@ return {
         { "<leader>dl", desc = "DAP: Run last" },
         { "<leader>du", desc = "DAP: Toggle UI" },
         { "<leader>de", desc = "DAP: Eval under the cursor" },
+        { "<leader>dd", desc = "DAP: Disconnect" },
       },
     },
     keys = {
