@@ -20,6 +20,7 @@ config:
   mkdir -p {{home_dir()}}/.config/nvim
   stow -t {{home_dir()}}/.config/nvim .
 
+[confirm]
 config-gh:
   if [[ ! $(gh auth status) ]]; then gh auth login; fi
 
