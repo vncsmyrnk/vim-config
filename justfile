@@ -5,7 +5,7 @@ default:
 
 install-deps:
   #!/bin/bash
-  if [ "{{os_full}}" = "debian" ]; then
+  if [ "{{os}}" = "Debian GNU/Linux" ] || [ "{{os}}" = "Ubuntu" ]; then
     sudo apt-get install build-essential curl tar git ripgrep stow xclip
     if ! type brew; then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; fi
     brew install luarocks neovim gh lazygit
