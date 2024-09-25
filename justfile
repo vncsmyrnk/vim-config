@@ -1,5 +1,4 @@
-os := `cat /etc/os-release | grep "^NAME=" | cut -d "=" -f2`
-os_full := if os == "\"Arch Linux\"" { "arch" } else if os == "\"Debian GNU/Linux\"" { "debian" } else { error("Unsuported OS") }
+os := `cat /etc/os-release | grep "^NAME=" | cut -d "=" -f2 | tr -d '"'`
 
 default:
   just --list
@@ -10,7 +9,7 @@ install-deps:
     sudo apt-get install build-essential curl tar git ripgrep stow xclip
     if ! type brew; then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; fi
     brew install luarocks neovim gh lazygit
-  elif [ "{{os_full}}" = "arch" ]; then
+  elif [ "{{os}}" = "Arch Linux" ]; then
     sudo pacman -S base-devel curl tar git ripgrep stow luarocks neovim github-cli xclip lazygit
   fi
 
