@@ -219,6 +219,7 @@ return {
             { desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
             { desc = " dotfiles", group = "Number", action = "Telescope find_files follow=true cwd=$HOME/.config/nvim", key = "d" },
             { desc = " Current folder", group = "DashboardFiles", action = "Telescope find_files follow=true cwd=.", key = "f" },
+            { desc = "⎚ Empty file", group = "DashboardMruTitle", action = "e newfile", key = "e" },
           },
           packages = { enable = true },
           project = { enable = true, limit = 8, label = "Recent projects", action = "Telescope find_files cwd=" },
