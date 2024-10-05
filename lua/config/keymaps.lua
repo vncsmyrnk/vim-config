@@ -10,6 +10,7 @@ vim.keymap.set("n", "<leader>n", "<C-w><C-w>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>qq", "<cmd>q<CR>", { desc = "Close buffer" })
 vim.keymap.set("n", "<leader>qp", "<cmd>b#|bd#<CR>", { desc = "Close current buffer and go to previous" })
 vim.keymap.set("n", "<leader>qa", "<cmd>qa<CR>", { desc = "Close session" })
+vim.keymap.set("n", "<leader>qA", "<cmd>qa!<CR>", { desc = "Close session without saving" })
 
 -- Copy file name
 vim.keymap.set("n", "<leader>eyp", "<cmd>let @+ = expand(\"%:p\")<cr>", { desc = "Copy current buffer absolute path" })
