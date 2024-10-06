@@ -2,6 +2,12 @@ return {
   {
     "stevearc/conform.nvim",
     opts = {
+      -- INFO: https://github.com/stevearc/conform.nvim?tab=readme-ov-file#options
+      formatters = {
+        stylua = {
+          prepend_args = { "--indent-type", "Spaces", "--indent-width", "2" },
+        },
+      },
       formatters_by_ft = {
         lua = { "stylua" },
         json = { "jq" }
