@@ -13,9 +13,9 @@ vim.keymap.set("n", "<leader>qa", "<cmd>qa<CR>", { desc = "Close session" })
 vim.keymap.set("n", "<leader>qA", "<cmd>qa!<CR>", { desc = "Close session without saving" })
 
 -- Copy file name
-vim.keymap.set("n", "<leader>eyp", "<cmd>let @+ = expand(\"%:p\")<cr>", { desc = "Copy current buffer absolute path" })
-vim.keymap.set("n", "<leader>eyf", "<cmd>let @+ = expand(\"%:f\")<cr>", { desc = "Copy current buffer relative path" })
-vim.keymap.set("n", "<leader>eyt", "<cmd>let @+ = expand(\"%:f\")<cr>", { desc = "Copy current buffer file name" })
+vim.keymap.set("n", "<leader>eyp", '<cmd>let @+ = expand("%:p")<cr>', { desc = "Copy current buffer absolute path" })
+vim.keymap.set("n", "<leader>eyf", '<cmd>let @+ = expand("%:f")<cr>', { desc = "Copy current buffer relative path" })
+vim.keymap.set("n", "<leader>eyt", '<cmd>let @+ = expand("%:f")<cr>', { desc = "Copy current buffer file name" })
 
 -- Resizing
 vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })

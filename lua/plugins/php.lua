@@ -5,6 +5,6 @@ end
 return {
   {
     "stephpy/vim-php-cs-fixer",
-    event = "BufEnter *.php"
-  }
+    event = "BufEnter *.php",
+  },
 }

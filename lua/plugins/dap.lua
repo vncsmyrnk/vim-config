@@ -1,5 +1,7 @@
 local must_install = {}
-if vim.fn.executable("go") == 1 then table.insert(must_install, "delve") end
+if vim.fn.executable("go") == 1 then
+  table.insert(must_install, "delve")
+end
 
 return {
   {
@@ -17,7 +19,7 @@ return {
           function(config)
             require("mason-nvim-dap").default_setup(config)
           end,
-        }
+        },
       })
 
       local dap = require("dap")
@@ -30,7 +32,7 @@ return {
         executable = {
           command = "dlv",
           args = { "dap", "-l", "127.0.0.1:2345" },
-        }
+        },
       }
 
       dap.configurations.go = {
@@ -38,21 +40,21 @@ return {
           type = "delve",
           name = "Debug",
           request = "launch",
-          program = "${file}"
+          program = "${file}",
         },
         {
           type = "delve",
           name = "Debug test",
           request = "launch",
           mode = "test",
-          program = "${file}"
+          program = "${file}",
         },
         {
           type = "delve",
           name = "Debug test (go.mod)",
           request = "launch",
           mode = "test",
-          program = "./${relativeFileDirname}"
+          program = "./${relativeFileDirname}",
         },
         {
           type = "delve",
@@ -62,21 +64,65 @@ return {
           remotePath = "",
           port = "2345",
           host = "127.0.0.1",
-        }
+        },
       }
     end,
     keys = {
-      { "<F5>",       "<cmd>lua require\"dap\".continue()<CR>",                                               { noremap = true, silent = true } },
-      { "<F10>",      "<cmd>lua require\"dap\".step_over()<CR>",                                              { noremap = true, silent = true } },
-      { "<F11>",      "<cmd>lua require\"dap\".step_into()<CR>",                                              { noremap = true, silent = true } },
-      { "<F12>",      "<cmd>lua require\"dap\".step_out()<CR>",                                               { noremap = true, silent = true } },
-      { "<leader>b",  "<cmd>lua require\"dap\".toggle_breakpoint()<CR>",                                      { noremap = true, silent = true } },
-      { "<leader>B",  "<cmd>lua require\"dap\".set_breakpoint(vim.fn.input(\"Breakpoint condition: \"))<CR>", { noremap = true, silent = true } },
-      { "<leader>dr", "<cmd>lua require\"dap\".repl.open()<CR>",                                              { noremap = true, silent = true } },
-      { "<leader>dl", "<cmd>lua require\"dap\".run_last()<CR>",                                               { noremap = true, silent = true } },
-      { "<leader>du", "<cmd>lua require\"dapui\".toggle()<CR>",                                               { noremap = true, silent = true } },
-      { "<leader>de", "<cmd>lua require\"dapui\".eval()<CR>",                                                 { noremap = true, silent = true } },
-      { "<leader>dd", "<cmd>lua require\"dap\".disconnect()<CR>",                                             { noremap = true, silent = true } },
+      {
+        "<F5>",
+        '<cmd>lua require"dap".continue()<CR>',
+        { noremap = true, silent = true },
+      },
+      {
+        "<F10>",
+        '<cmd>lua require"dap".step_over()<CR>',
+        { noremap = true, silent = true },
+      },
+      {
+        "<F11>",
+        '<cmd>lua require"dap".step_into()<CR>',
+        { noremap = true, silent = true },
+      },
+      {
+        "<F12>",
+        '<cmd>lua require"dap".step_out()<CR>',
+        { noremap = true, silent = true },
+      },
+      {
+        "<leader>b",
+        '<cmd>lua require"dap".toggle_breakpoint()<CR>',
+        { noremap = true, silent = true },
+      },
+      {
+        "<leader>B",
+        '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>',
+        { noremap = true, silent = true },
+      },
+      {
+        "<leader>dr",
+        '<cmd>lua require"dap".repl.open()<CR>',
+        { noremap = true, silent = true },
+      },
+      {
+        "<leader>dl",
+        '<cmd>lua require"dap".run_last()<CR>',
+        { noremap = true, silent = true },
+      },
+      {
+        "<leader>du",
+        '<cmd>lua require"dapui".toggle()<CR>',
+        { noremap = true, silent = true },
+      },
+      {
+        "<leader>de",
+        '<cmd>lua require"dapui".eval()<CR>',
+        { noremap = true, silent = true },
+      },
+      {
+        "<leader>dd",
+        '<cmd>lua require"dap".disconnect()<CR>',
+        { noremap = true, silent = true },
+      },
     },
   },
 }

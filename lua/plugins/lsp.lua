@@ -1,8 +1,16 @@
 local must_install = { "lua_ls" }
-if vim.fn.executable("go") == 1 then table.insert(must_install, "gopls") end
-if vim.fn.executable("php") == 1 then table.insert(must_install, "intelephense") end
-if vim.fn.executable("python") == 1 then table.insert(must_install, "pylsp") end
-if vim.fn.executable("rustc") == 1 then table.insert(must_install, "rust_analyzer") end
+if vim.fn.executable("go") == 1 then
+  table.insert(must_install, "gopls")
+end
+if vim.fn.executable("php") == 1 then
+  table.insert(must_install, "intelephense")
+end
+if vim.fn.executable("python") == 1 then
+  table.insert(must_install, "pylsp")
+end
+if vim.fn.executable("rustc") == 1 then
+  table.insert(must_install, "rust_analyzer")
+end
 
 return {
   {
@@ -26,7 +34,7 @@ return {
           { name = "path" },
           { name = "nvim_lsp" },
           { name = "luasnip", keyword_length = 2 },
-          { name = "buffer",  keyword_length = 3 },
+          { name = "buffer", keyword_length = 3 },
         },
         window = {
           completion = cmp.config.window.bordered(),
@@ -44,7 +52,7 @@ return {
           ["<C-d>"] = cmp.mapping.scroll_docs(4),
         }),
       })
-    end
+    end,
   },
 
   {
@@ -80,7 +88,7 @@ return {
         sign_text = true,
         lsp_attach = lsp_attach,
         float_border = "rounded",
-        capabilities = require("cmp_nvim_lsp").default_capabilities()
+        capabilities = require("cmp_nvim_lsp").default_capabilities(),
       })
 
       require("mason").setup()
@@ -93,16 +101,16 @@ return {
         },
       })
 
-      require("lspconfig").lua_ls.setup {
+      require("lspconfig").lua_ls.setup({
         settings = {
           Lua = {
             diagnostics = {
-              globals = { "vim" }
-            }
-          }
-        }
-      }
-    end
+              globals = { "vim" },
+            },
+          },
+        },
+      })
+    end,
   },
 
   {
@@ -110,12 +118,20 @@ return {
     opts = {},
     cmd = "Trouble",
     keys = {
-      { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>",                        desc = "Diagnostics (Trouble)" },
-      { "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",           desc = "Buffer Diagnostics (Trouble)" },
-      { "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>",                desc = "Symbols (Trouble)" },
-      { "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", desc = "LSP Definitions / references / ... (Trouble)" },
-      { "<leader>xL", "<cmd>Trouble loclist toggle<cr>",                            desc = "Location List (Trouble)" },
-      { "<leader>xQ", "<cmd>Trouble qflist toggle<cr>",                             desc = "Quickfix List (Trouble)" },
+      { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
+      {
+        "<leader>xX",
+        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+        desc = "Buffer Diagnostics (Trouble)",
+      },
+      { "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", desc = "Symbols (Trouble)" },
+      {
+        "<leader>cl",
+        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+        desc = "LSP Definitions / references / ... (Trouble)",
+      },
+      { "<leader>xL", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)" },
+      { "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)" },
     },
   },
 }

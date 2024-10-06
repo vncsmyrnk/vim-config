@@ -20,29 +20,89 @@ return {
         defaults = {
           mappings = {
             i = {
-              ["<C-Down>"] = require('telescope.actions').cycle_history_next,
-              ["<C-Up>"] = require('telescope.actions').cycle_history_prev,
+              ["<C-Down>"] = require("telescope.actions").cycle_history_next,
+              ["<C-Up>"] = require("telescope.actions").cycle_history_prev,
             },
-          }
-        }
+          },
+        },
       })
       telescope.load_extension("live_grep_args")
       require("telescope").load_extension("rest")
     end,
     keys = {
-      { "<leader>ff",  "<cmd>Telescope find_files<cr>",                                                                        desc = "Telescope: Fuzzy finder" },
-      { "<leader>fa",  function() require("telescope").extensions.live_grep_args.live_grep_args() end,                         desc = "Telescope: Live grep with args (rg)" },
-      { "<leader>fb",  function() require("telescope.builtin").buffers({ sort_mru = true, ignore_current_buffer = true }) end, desc = "Telescope: Buffers" },
-      { "<leader>fd",  function() require("telescope.builtin").diagnostics({ bufnr = 0 }) end,                                 desc = "Telescope: LSP diagnostics" },
-      { "<leader>fm",  "<cmd>Telescope man_pages<cr>",                                                                         desc = "Telescope: man pages" },
-      { "<leader>fr",  "<cmd>Telescope lsp_references<cr>",                                                                    desc = "Telescope: LSP references" },
-      { "<leader>fs",  "<cmd>Telescope search_history<cr>",                                                                    desc = "Telescope: Search history" },
-      { "<leader>fl",  "<cmd>Telescope resume<cr>",                                                                            desc = "Telescope: Open last search" },
-      { "<leader>fgc", "<cmd>Telescope git_commits<cr>",                                                                       desc = "Telescope: Git commits" },
-      { "<leader>fgs", "<cmd>Telescope git_status<cr>",                                                                        desc = "Telescope: Git status" },
-      { "<leader>fgb", "<cmd>Telescope git_branches<cr>",                                                                      desc = "Telescope: Git branches" },
-      { "<leader>fer", function() require("telescope").extensions.rest.select_env() end,                                       desc = "Telescope: Rest environment select" },
-      { "<C-p>",       "<cmd>Telescope git_files<cr>",                                                                         desc = "Telescope: Git project files" },
+      {
+        "<leader>ff",
+        "<cmd>Telescope find_files<cr>",
+        desc = "Telescope: Fuzzy finder",
+      },
+      {
+        "<leader>fa",
+        function()
+          require("telescope").extensions.live_grep_args.live_grep_args()
+        end,
+        desc = "Telescope: Live grep with args (rg)",
+      },
+      {
+        "<leader>fb",
+        function()
+          require("telescope.builtin").buffers({ sort_mru = true, ignore_current_buffer = true })
+        end,
+        desc = "Telescope: Buffers",
+      },
+      {
+        "<leader>fd",
+        function()
+          require("telescope.builtin").diagnostics({ bufnr = 0 })
+        end,
+        desc = "Telescope: LSP diagnostics",
+      },
+      {
+        "<leader>fm",
+        "<cmd>Telescope man_pages<cr>",
+        desc = "Telescope: man pages",
+      },
+      {
+        "<leader>fr",
+        "<cmd>Telescope lsp_references<cr>",
+        desc = "Telescope: LSP references",
+      },
+      {
+        "<leader>fs",
+        "<cmd>Telescope search_history<cr>",
+        desc = "Telescope: Search history",
+      },
+      {
+        "<leader>fl",
+        "<cmd>Telescope resume<cr>",
+        desc = "Telescope: Open last search",
+      },
+      {
+        "<leader>fgc",
+        "<cmd>Telescope git_commits<cr>",
+        desc = "Telescope: Git commits",
+      },
+      {
+        "<leader>fgs",
+        "<cmd>Telescope git_status<cr>",
+        desc = "Telescope: Git status",
+      },
+      {
+        "<leader>fgb",
+        "<cmd>Telescope git_branches<cr>",
+        desc = "Telescope: Git branches",
+      },
+      {
+        "<leader>fer",
+        function()
+          require("telescope").extensions.rest.select_env()
+        end,
+        desc = "Telescope: Rest environment select",
+      },
+      {
+        "<C-p>",
+        "<cmd>Telescope git_files<cr>",
+        desc = "Telescope: Git project files",
+      },
     },
     lazy = false,
   },
@@ -53,32 +113,32 @@ return {
     opts = {
       preset = "modern",
       spec = {
-        { "<leader>f",  group = "File find" },
+        { "<leader>f", group = "File find" },
         { "<leader>fg", group = "File find (Git)" },
         { "<leader>fe", group = "File find (environment)" },
-        { "<leader>e",  group = "File explorer" },
-        { "<leader>g",  group = "Git" },
-        { "<leader>q",  group = "Quit" },
-        { "<leader>i",  group = "Insert snippets" },
+        { "<leader>e", group = "File explorer" },
+        { "<leader>g", group = "Git" },
+        { "<leader>q", group = "Quit" },
+        { "<leader>i", group = "Insert snippets" },
         { "<leader>ip", group = "Insert snippets (PHP)" },
 
-        { "gK",         desc = "LSP: Hover" },
-        { "gd",         desc = "LSP: Go to definition" },
-        { "gD",         desc = "LSP: Go to declaration" },
-        { "gi",         desc = "LSP: Go to implementation" },
-        { "gO",         desc = "LSP: List diagnostics" },
-        { "go",         desc = "LSP: Go to type definition" },
-        { "gr",         desc = "LSP: Go to references" },
-        { "gs",         desc = "LSP: Signature help" },
-        { "<F2>",       desc = "LSP: Buffer rename" },
-        { "<F3>",       desc = "LSP: Buffer format" },
-        { "<F4>",       desc = "LSP: Code actions" },
+        { "gK", desc = "LSP: Hover" },
+        { "gd", desc = "LSP: Go to definition" },
+        { "gD", desc = "LSP: Go to declaration" },
+        { "gi", desc = "LSP: Go to implementation" },
+        { "gO", desc = "LSP: List diagnostics" },
+        { "go", desc = "LSP: Go to type definition" },
+        { "gr", desc = "LSP: Go to references" },
+        { "gs", desc = "LSP: Signature help" },
+        { "<F2>", desc = "LSP: Buffer rename" },
+        { "<F3>", desc = "LSP: Buffer format" },
+        { "<F4>", desc = "LSP: Code actions" },
 
-        { "<F5>",       desc = "DAP: Continue" },
-        { "<F10>",      desc = "DAP: Step over" },
-        { "<F11>",      desc = "DAP: Step into" },
-        { "<F12>",      desc = "DAP: Step out" },
-        { "<leader>b",  desc = "DAP: Toggle breakpoint" },
+        { "<F5>", desc = "DAP: Continue" },
+        { "<F10>", desc = "DAP: Step over" },
+        { "<F11>", desc = "DAP: Step into" },
+        { "<F12>", desc = "DAP: Step out" },
+        { "<leader>b", desc = "DAP: Toggle breakpoint" },
         { "<leader>dr", desc = "DAP: Open REPL" },
         { "<leader>dl", desc = "DAP: Run last" },
         { "<leader>du", desc = "DAP: Toggle UI" },
@@ -102,13 +162,13 @@ return {
     event = "VeryLazy",
     config = function()
       local colors = {
-        blue   = "#80a0ff",
-        cyan   = "#79dac8",
-        black  = "#080808",
-        white  = "#c6c6c6",
-        red    = "#ff5189",
+        blue = "#80a0ff",
+        cyan = "#79dac8",
+        black = "#080808",
+        white = "#c6c6c6",
+        red = "#ff5189",
         violet = "#d183e8",
-        grey   = "#303030",
+        grey = "#303030",
       }
 
       local bubbles_theme = {
@@ -129,7 +189,7 @@ return {
         },
       }
 
-      require("lualine").setup {
+      require("lualine").setup({
         options = {
           theme = bubbles_theme,
           component_separators = "",
@@ -139,15 +199,14 @@ return {
           lualine_c = {
             {
               "filename",
-              path = 1
-            }
+              path = 1,
+            },
           },
           lualine_x = {
-            "rest"
+            "rest",
           },
-        }
-
-      }
+        },
+      })
     end,
   },
 
@@ -155,8 +214,8 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     cmd = "NeoTree",
     keys = {
-      { "<leader>ee", "<cmd>Neotree toggle<cr>",     desc = "Neotree toggle" },
-      { "<leader>ef", "<cmd>Neotree reveal<cr>",     desc = "Neotree reveal" },
+      { "<leader>ee", "<cmd>Neotree toggle<cr>", desc = "Neotree toggle" },
+      { "<leader>ef", "<cmd>Neotree reveal<cr>", desc = "Neotree reveal" },
       { "<leader>eg", "<cmd>Neotree git_status<cr>", desc = "Neotree git status" },
     },
     config = function()
@@ -199,10 +258,34 @@ return {
       "rcarriga/nvim-notify",
     },
     keys = {
-      { "<leader>snl", function() require("noice").cmd("last") end,    desc = "Noice Last Message" },
-      { "<leader>snh", function() require("noice").cmd("history") end, desc = "Noice History" },
-      { "<leader>sna", function() require("noice").cmd("all") end,     desc = "Noice All" },
-      { "<leader>snd", function() require("noice").cmd("dismiss") end, desc = "Dismiss All" },
+      {
+        "<leader>snl",
+        function()
+          require("noice").cmd("last")
+        end,
+        desc = "Noice Last Message",
+      },
+      {
+        "<leader>snh",
+        function()
+          require("noice").cmd("history")
+        end,
+        desc = "Noice History",
+      },
+      {
+        "<leader>sna",
+        function()
+          require("noice").cmd("all")
+        end,
+        desc = "Noice All",
+      },
+      {
+        "<leader>snd",
+        function()
+          require("noice").cmd("dismiss")
+        end,
+        desc = "Dismiss All",
+      },
     },
   },
 
@@ -210,23 +293,33 @@ return {
     "nvimdev/dashboard-nvim",
     event = "VimEnter",
     config = function()
-      require("dashboard").setup {
+      require("dashboard").setup({
         config = {
           week_header = {
             enable = true,
           },
           shortcut = {
             { desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
-            { desc = " dotfiles", group = "Number", action = "Telescope find_files follow=true cwd=$HOME/.config/nvim", key = "d" },
-            { desc = " Current folder", group = "DashboardFiles", action = "Telescope find_files follow=true cwd=.", key = "f" },
+            {
+              desc = " dotfiles",
+              group = "Number",
+              action = "Telescope find_files follow=true cwd=$HOME/.config/nvim",
+              key = "d",
+            },
+            {
+              desc = " Current folder",
+              group = "DashboardFiles",
+              action = "Telescope find_files follow=true cwd=.",
+              key = "f",
+            },
             { desc = "⎚ Empty file", group = "DashboardMruTitle", action = "e newfile", key = "e" },
           },
           packages = { enable = true },
           project = { enable = true, limit = 8, label = "Recent projects", action = "Telescope find_files cwd=" },
           mru = { limit = 10, label = "Recent files", cwd_only = false },
           footer = {},
-        }
-      }
+        },
+      })
     end,
   },
 
