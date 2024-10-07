@@ -332,6 +332,11 @@ return {
     },
   },
 
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+  },
+
   -- INFO: https://www.jetbrains.com/help/idea/exploring-http-syntax.html
   { "rest-nvim/rest.nvim" },
   { "sindrets/diffview.nvim" },
