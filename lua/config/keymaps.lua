@@ -23,6 +23,23 @@ vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window 
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
+-- Window
+vim.keymap.set("t", "<A-h>", [[<C-\><C-N><C-w>h]], { desc = "Go to window on the right" })
+vim.keymap.set("t", "<A-j>", [[<C-\><C-N><C-w>j]], { desc = "Go to window below" })
+vim.keymap.set("t", "<A-k>", [[<C-\><C-N><C-w>k]], { desc = "Go to window above" })
+vim.keymap.set("t", "<A-l>", [[<C-\><C-N><C-w>l]], { desc = "Go to window on the left" })
+vim.keymap.set("t", "<A-t>", [[<C-\><C-N><C-w>t]], { desc = "Go to window on the top left" })
+vim.keymap.set("t", "<A-b>", [[<C-\><C-N><C-w>b]], { desc = "Go to window on the right bottom" })
+vim.keymap.set("n", "<A-h>", [[<C-w>h]], { desc = "Go to window on the right" })
+vim.keymap.set("n", "<A-j>", [[<C-w>j]], { desc = "Go to window below" })
+vim.keymap.set("n", "<A-k>", [[<C-w>k]], { desc = "Go to window above" })
+vim.keymap.set("n", "<A-l>", [[<C-w>l]], { desc = "Go to window on the left" })
+vim.keymap.set("n", "<A-t>", [[<C-w>t]], { desc = "Go to window on the top left" })
+vim.keymap.set("n", "<A-b>", [[<C-w>b]], { desc = "Go to window on the right bottom" })
+
+-- Terminal mode
+vim.keymap.set("t", "<A-q>", [[<C-\><C-N>]], { desc = "Exit terminal mode" })
+
 -- Lazy
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
