@@ -18,10 +18,10 @@ vim.keymap.set("n", "<leader>eyf", '<cmd>let @+ = expand("%:f")<cr>', { desc = "
 vim.keymap.set("n", "<leader>eyt", '<cmd>let @+ = expand("%:f")<cr>', { desc = "Copy current buffer file name" })
 
 -- Resizing
-vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
-vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
-vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
-vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
+vim.keymap.set("n", "<A-K>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
+vim.keymap.set("n", "<A-J>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
+vim.keymap.set("n", "<A-H>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
+vim.keymap.set("n", "<A-L>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
 -- Window
 vim.keymap.set("t", "<A-h>", [[<C-\><C-N><C-w>h]], { desc = "Go to window on the right" })
