@@ -30,6 +30,7 @@ vim.keymap.set("t", "<A-k>", [[<C-\><C-N><C-w>k]], { desc = "Go to window above"
 vim.keymap.set("t", "<A-l>", [[<C-\><C-N><C-w>l]], { desc = "Go to window on the right" })
 vim.keymap.set("t", "<A-t>", [[<C-\><C-N><C-w>t]], { desc = "Go to window on the top left" })
 vim.keymap.set("t", "<A-b>", [[<C-\><C-N><C-w>b]], { desc = "Go to window on the right bottom" })
+vim.keymap.set("n", "<A-o>", [[<C-w>o]], { desc = "Makes the current window the only one visible" })
 vim.keymap.set("n", "<A-h>", [[<C-w>h]], { desc = "Go to window on the left" })
 vim.keymap.set("n", "<A-j>", [[<C-w>j]], { desc = "Go to window below" })
 vim.keymap.set("n", "<A-k>", [[<C-w>k]], { desc = "Go to window above" })
