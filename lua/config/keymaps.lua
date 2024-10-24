@@ -38,6 +38,14 @@ vim.keymap.set("n", "<A-l>", [[<C-w>l]], { desc = "Go to window on the right" })
 vim.keymap.set("n", "<A-t>", [[<C-w>t]], { desc = "Go to window on the top left" })
 vim.keymap.set("n", "<A-b>", [[<C-w>b]], { desc = "Go to window on the right bottom" })
 
+-- Splitting terminal windows
+vim.keymap.set("n", "<A-v>", [[<cmd>vert term<CR>]], { desc = "Open split terminal on the right" })
+vim.keymap.set("n", "<A-r>", [[<cmd>rightb term<CR>]], { desc = "Open split terminal on the bottom right" })
+vim.keymap.set("n", "<A-a>", [[<cmd>lefta term<CR>]], { desc = "Open split terminal on the top left" })
+
+-- Splitting windows
+vim.keymap.set("n", "<A-s>", [[<cmd>vs#<CR>]], { desc = "Opens the last buffer on a split" })
+
 -- Terminal mode
 vim.keymap.set("t", "<A-q>", [[<C-\><C-N>]], { desc = "Exit terminal mode" })
 
