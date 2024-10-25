@@ -30,21 +30,22 @@ vim.keymap.set("t", "<A-k>", [[<C-\><C-N><C-w>k]], { desc = "Go to window above"
 vim.keymap.set("t", "<A-l>", [[<C-\><C-N><C-w>l]], { desc = "Go to window on the right" })
 vim.keymap.set("t", "<A-t>", [[<C-\><C-N><C-w>t]], { desc = "Go to window on the top left" })
 vim.keymap.set("t", "<A-b>", [[<C-\><C-N><C-w>b]], { desc = "Go to window on the right bottom" })
-vim.keymap.set("n", "<A-o>", [[<C-w>o]], { desc = "Makes the current window the only one visible" })
 vim.keymap.set("n", "<A-h>", [[<C-w>h]], { desc = "Go to window on the left" })
 vim.keymap.set("n", "<A-j>", [[<C-w>j]], { desc = "Go to window below" })
 vim.keymap.set("n", "<A-k>", [[<C-w>k]], { desc = "Go to window above" })
 vim.keymap.set("n", "<A-l>", [[<C-w>l]], { desc = "Go to window on the right" })
 vim.keymap.set("n", "<A-t>", [[<C-w>t]], { desc = "Go to window on the top left" })
 vim.keymap.set("n", "<A-b>", [[<C-w>b]], { desc = "Go to window on the right bottom" })
+vim.keymap.set("n", "<A-o>", [[<C-w>o]], { desc = "Makes the current window the only one visible" })
+vim.keymap.set("n", "<A-q>", [[<C-w>q]], { desc = "Closes current window" })
 
 -- Splitting terminal windows
-vim.keymap.set("n", "<A-v>", [[<cmd>vert term<CR>]], { desc = "Open split terminal on the right" })
+vim.keymap.set("n", "<A-v>", [[<cmd>vert term<CR>]], { desc = "Open split terminal on the left" })
 vim.keymap.set("n", "<A-r>", [[<cmd>rightb term<CR>]], { desc = "Open split terminal on the bottom right" })
 vim.keymap.set("n", "<A-a>", [[<cmd>lefta term<CR>]], { desc = "Open split terminal on the top left" })
 
 -- Terminal mode
-vim.keymap.set("t", "<A-q>", [[<C-\><C-N>]], { desc = "Exit terminal mode" })
+vim.keymap.set("t", "<A-d>", [[<C-\><C-N>]], { desc = "Exit terminal mode" })
 
 -- Tabs
 vim.keymap.set("n", "<leader>tn", [[<cmd>tabnew<CR>]], { desc = "Opens a new tab" })
