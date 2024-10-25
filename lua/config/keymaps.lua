@@ -43,11 +43,15 @@ vim.keymap.set("n", "<A-v>", [[<cmd>vert term<CR>]], { desc = "Open split termin
 vim.keymap.set("n", "<A-r>", [[<cmd>rightb term<CR>]], { desc = "Open split terminal on the bottom right" })
 vim.keymap.set("n", "<A-a>", [[<cmd>lefta term<CR>]], { desc = "Open split terminal on the top left" })
 
--- Splitting windows
-vim.keymap.set("n", "<A-s>", [[<cmd>vs#<CR>]], { desc = "Opens the last buffer on a split" })
-
 -- Terminal mode
 vim.keymap.set("t", "<A-q>", [[<C-\><C-N>]], { desc = "Exit terminal mode" })
+
+-- Tabs
+vim.keymap.set("n", "<leader>tn", [[<cmd>tabnew<CR>]], { desc = "Opens a new tab" })
+vim.keymap.set("n", "<leader>tt", [[<cmd>tab term<CR>]], { desc = "Opens a new tab in terminal mode" })
+vim.keymap.set("n", "<leader>th", [[<cmd>tabmove -1<CR>]], { desc = "Moves tab to the right" })
+vim.keymap.set("n", "<leader>tl", [[<cmd>tabmove +1<CR>]], { desc = "Moves tab to the left" })
+vim.keymap.set("n", "<leader>tq", [[<cmd>tabclose<CR>]], { desc = "Closes current tab" })
 
 -- Lazy
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })

@@ -118,9 +118,10 @@ return {
         { "<leader>fe", group = "File find (environment)" },
         { "<leader>e", group = "File explorer" },
         { "<leader>g", group = "Git" },
-        { "<leader>q", group = "Quit" },
         { "<leader>i", group = "Insert snippets" },
         { "<leader>ip", group = "Insert snippets (PHP)" },
+        { "<leader>q", group = "Quit" },
+        { "<leader>t", group = "Tabs" },
 
         { "gK", desc = "LSP: Hover" },
         { "gd", desc = "LSP: Go to definition" },
@@ -325,6 +326,7 @@ return {
 
   {
     "akinsho/toggleterm.nvim",
+    enabled = false,
     version = "*",
     config = true,
     keys = {
