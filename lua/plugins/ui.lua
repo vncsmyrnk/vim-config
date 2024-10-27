@@ -120,6 +120,7 @@ return {
         { "<leader>g", group = "Git" },
         { "<leader>i", group = "Insert snippets" },
         { "<leader>ip", group = "Insert snippets (PHP)" },
+        { "<leader>o", group = "Oil" },
         { "<leader>q", group = "Quit" },
         { "<leader>t", group = "Tabs" },
 
@@ -213,16 +214,20 @@ return {
 
   {
     "nvim-neo-tree/neo-tree.nvim",
-    cmd = "NeoTree",
+    cmd = "Neotree",
     keys = {
       { "<leader>ee", "<cmd>Neotree toggle<cr>", desc = "Neotree toggle" },
       { "<leader>ef", "<cmd>Neotree reveal<cr>", desc = "Neotree reveal" },
       { "<leader>eg", "<cmd>Neotree git_status<cr>", desc = "Neotree git status" },
     },
-    config = function()
-      vim.g.loaded_netrw = 1
-      vim.g.loaded_netrwPlugin = 1
-    end,
+  },
+
+  {
+    "stevearc/oil.nvim",
+    opts = {},
+    keys = {
+      { "<leader>o", "<cmd>Oil --float<cr>", desc = "Oil opens current dir in a float window" },
+    },
     lazy = false,
   },
 
