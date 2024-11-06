@@ -206,6 +206,7 @@ return {
           },
           lualine_x = {
             "rest",
+            "copilot",
           },
         },
       })
@@ -354,7 +355,17 @@ return {
     end,
   },
 
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "canary",
+    build = "make tiktoken",
+    opts = {
+      debug = true,
+    },
+  },
+
   -- INFO: https://www.jetbrains.com/help/idea/exploring-http-syntax.html
   { "rest-nvim/rest.nvim" },
   { "sindrets/diffview.nvim" },
+  { "AndreM222/copilot-lualine" },
 }
