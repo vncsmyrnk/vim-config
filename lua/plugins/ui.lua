@@ -164,12 +164,12 @@ return {
     event = "VeryLazy",
     config = function()
       local colors = {
-        blue = "#80a0ff",
+        blue = "#80ccff",
         cyan = "#79dac8",
         black = "#080808",
         white = "#c6c6c6",
         red = "#ff5189",
-        violet = "#d183e8",
+        violet = "#8385e8",
         grey = "#303030",
       }
 
