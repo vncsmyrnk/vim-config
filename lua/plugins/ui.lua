@@ -344,6 +344,16 @@ return {
     lazy = false,
   },
 
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({})
+    end,
+  },
+
   -- INFO: https://www.jetbrains.com/help/idea/exploring-http-syntax.html
   { "rest-nvim/rest.nvim" },
   { "sindrets/diffview.nvim" },
