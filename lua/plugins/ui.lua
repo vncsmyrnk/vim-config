@@ -259,6 +259,12 @@ return {
         inc_rename = false,
         lsp_doc_border = false,
       },
+      routes = {
+        {
+          view = "split",
+          filter = { event = "msg_show", min_height = 20 },
+        },
+      },
     },
     dependencies = {
       "MunifTanjim/nui.nvim",
