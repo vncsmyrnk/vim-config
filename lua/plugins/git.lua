@@ -40,19 +40,5 @@ return {
     end,
   },
 
-  {
-    "kdheepak/lazygit.nvim",
-    cmd = {
-      "LazyGit",
-      "LazyGitConfig",
-      "LazyGitCurrentFile",
-      "LazyGitFilter",
-      "LazyGitFilterCurrentFile",
-    },
-    keys = {
-      { "<leader>gl", "<cmd>LazyGit<cr>", desc = "LazyGit" },
-    },
-  },
-
   { "rhysd/git-messenger.vim" },
 }
