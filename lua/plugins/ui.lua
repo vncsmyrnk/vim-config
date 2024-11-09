@@ -265,6 +265,18 @@ return {
   },
 
   {
+    "voldikss/vim-floaterm",
+    cmd = "FloatermNew",
+    config = function()
+      vim.g.floaterm_width = 0.8
+      vim.g.floaterm_height = 0.8
+    end,
+    keys = {
+      { "<leader>gl", "<cmd>FloatermNew lazygit<cr>", desc = "LazyGit" },
+    },
+  },
+
+  {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
