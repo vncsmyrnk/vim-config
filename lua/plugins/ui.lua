@@ -173,7 +173,7 @@ return {
         grey = "#303030",
       }
 
-      local bubbles_theme = {
+      local theme = {
         normal = {
           a = { fg = colors.black, bg = colors.violet },
           b = { fg = colors.white, bg = colors.grey },
@@ -191,13 +191,34 @@ return {
         },
       }
 
+      local function search_result()
+        if vim.v.hlsearch == 0 then
+          return ""
+        end
+        local last_search = vim.fn.getreg("/")
+        if not last_search or last_search == "" then
+          return ""
+        end
+        local searchcount = vim.fn.searchcount({ maxcount = 9999 })
+        return last_search .. "(" .. searchcount.current .. "/" .. searchcount.total .. ")"
+      end
+
       require("lualine").setup({
         options = {
-          theme = bubbles_theme,
+          theme = theme,
           component_separators = "",
-          section_separators = { left = "", right = "" },
+          section_separators = { left = "", right = "" },
         },
         sections = {
+          lualine_a = {
+            {
+              "mode",
+              fmt = function(str)
+                return str:upper()
+              end,
+              color = { gui = "bold" },
+            },
+          },
           lualine_c = {
             {
               "filename",
@@ -207,6 +228,11 @@ return {
           lualine_x = {
             "rest",
             "copilot",
+          },
+          lualine_y = {
+            search_result,
+            "progress",
+            "filetype",
           },
         },
       })
