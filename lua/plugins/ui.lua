@@ -202,7 +202,7 @@ return {
           return ""
         end
         local searchcount = vim.fn.searchcount({ maxcount = 9999 })
-        return last_search .. "(" .. searchcount.current .. "/" .. searchcount.total .. ")"
+        return last_search .. " (" .. searchcount.current .. "/" .. searchcount.total .. ")"
       end
 
       require("lualine").setup({
@@ -216,9 +216,8 @@ return {
             {
               "mode",
               fmt = function(str)
-                return str:upper()
+                return str:sub(1, 1)
               end,
-              color = { gui = "bold" },
             },
           },
           lualine_c = {
@@ -234,6 +233,7 @@ return {
           lualine_y = {
             search_result,
             "progress",
+            "filesize",
             "filetype",
           },
         },
