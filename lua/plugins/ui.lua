@@ -405,6 +405,7 @@ return {
     "CopilotC-Nvim/CopilotChat.nvim",
     branch = "canary",
     build = "make tiktoken",
+    lazy = false,
     opts = {
       debug = true,
       window = {
