@@ -407,6 +407,10 @@ return {
     build = "make tiktoken",
     opts = {
       debug = true,
+      window = {
+        width = 0.3,
+      },
+    },
     keys = {
       { "<leader>ac", "<leader>CopilotChat<cr>", desc = "CopilotChat open" },
       {
