@@ -50,6 +50,14 @@ return {
         desc = "Telescope: Buffers",
       },
       {
+        "<leader>fc",
+        function()
+          local input = vim.fn.input("Custom location: ")
+          require("telescope.builtin").find_files({ cwd = input })
+        end,
+        desc = "Telescope: Custom path find files",
+      },
+      {
         "<leader>fd",
         function()
           require("telescope.builtin").diagnostics({ bufnr = 0 })
