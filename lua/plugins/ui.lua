@@ -113,6 +113,8 @@ return {
     opts = {
       preset = "modern",
       spec = {
+        { "<leader>a", group = "AI/Copilot" },
+        { "<leader>c", group = "Code" },
         { "<leader>f", group = "File find" },
         { "<leader>fg", group = "File find (Git)" },
         { "<leader>fe", group = "File find (environment)" },
@@ -405,6 +407,24 @@ return {
     build = "make tiktoken",
     opts = {
       debug = true,
+    keys = {
+      { "<leader>ac", "<leader>CopilotChat<cr>", desc = "CopilotChat open" },
+      {
+        "<leader>ah",
+        function()
+          local actions = require("CopilotChat.actions")
+          require("CopilotChat.integrations.telescope").pick(actions.help_actions())
+        end,
+        desc = "CopilotChat help actions",
+      },
+      {
+        "<leader>ap",
+        function()
+          local actions = require("CopilotChat.actions")
+          require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+        end,
+        desc = "CopilotChat prompt actions",
+      },
     },
   },
 
