@@ -401,6 +401,39 @@ return {
     lazy = false,
   },
 
+  {
+    "kndndrj/nvim-dbee",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+    build = function()
+      require("dbee").install()
+    end,
+    config = function()
+      require("dbee").setup({
+        sources = {
+          require("dbee.sources").EnvSource:new("DBEE_CONNECTIONS"),
+        },
+      })
+    end,
+    keys = {
+      {
+        "<leader>so",
+        function()
+          require("dbee").open()
+        end,
+        desc = "Dbee open",
+      },
+    },
+    {
+      "<leader>sq",
+      function()
+        require("dbee").close()
+      end,
+      desc = "Dbee close",
+    },
+  },
+
   -- INFO: https://www.jetbrains.com/help/idea/exploring-http-syntax.html
   { "rest-nvim/rest.nvim" },
   { "sindrets/diffview.nvim" },
