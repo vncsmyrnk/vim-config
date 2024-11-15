@@ -130,6 +130,7 @@ return {
         { "<leader>g", group = "Git" },
         { "<leader>i", group = "Insert snippets" },
         { "<leader>ip", group = "Insert snippets (PHP)" },
+        { "<leader>n", group = "Noice (notify)" },
         { "<leader>o", group = "Oil" },
         { "<leader>q", group = "Quit" },
         { "<leader>t", group = "Tabs" },
@@ -320,28 +321,28 @@ return {
     },
     keys = {
       {
-        "<leader>snl",
+        "<leader>nl",
         function()
           require("noice").cmd("last")
         end,
         desc = "Noice Last Message",
       },
       {
-        "<leader>snh",
+        "<leader>nh",
         function()
           require("noice").cmd("history")
         end,
         desc = "Noice History",
       },
       {
-        "<leader>sna",
+        "<leader>na",
         function()
           require("noice").cmd("all")
         end,
         desc = "Noice All",
       },
       {
-        "<leader>snd",
+        "<leader>nd",
         function()
           require("noice").cmd("dismiss")
         end,
