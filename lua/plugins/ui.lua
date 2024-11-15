@@ -133,6 +133,7 @@ return {
         { "<leader>n", group = "Noice (notify)" },
         { "<leader>o", group = "Oil" },
         { "<leader>q", group = "Quit" },
+        { "<leader>s", group = "SQL" },
         { "<leader>t", group = "Tabs" },
 
         { "gK", desc = "LSP: Hover" },
