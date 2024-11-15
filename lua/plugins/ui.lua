@@ -421,7 +421,7 @@ return {
       },
     },
     keys = {
-      { "<leader>ac", "<leader>CopilotChat<cr>", desc = "CopilotChat open" },
+      { "<leader>ac", "<cmd>CopilotChat<cr>", desc = "CopilotChat open" },
       {
         "<leader>ah",
         function()
