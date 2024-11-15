@@ -399,49 +399,6 @@ return {
     lazy = false,
   },
 
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    build = ":Copilot auth",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup({})
-    end,
-  },
-
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    branch = "canary",
-    build = "make tiktoken",
-    lazy = false,
-    opts = {
-      debug = true,
-      window = {
-        width = 0.3,
-      },
-    },
-    keys = {
-      { "<leader>ac", "<cmd>CopilotChat<cr>", desc = "CopilotChat open" },
-      { "<leader>aq", "<cmd>CopilotChatClose<cr>", desc = "CopilotChat close" },
-      {
-        "<leader>ah",
-        function()
-          local actions = require("CopilotChat.actions")
-          require("CopilotChat.integrations.telescope").pick(actions.help_actions())
-        end,
-        desc = "CopilotChat help actions",
-      },
-      {
-        "<leader>ap",
-        function()
-          local actions = require("CopilotChat.actions")
-          require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
-        end,
-        desc = "CopilotChat prompt actions",
-      },
-    },
-  },
-
   -- INFO: https://www.jetbrains.com/help/idea/exploring-http-syntax.html
   { "rest-nvim/rest.nvim" },
   { "sindrets/diffview.nvim" },
