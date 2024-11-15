@@ -424,13 +424,13 @@ return {
         end,
         desc = "Dbee open",
       },
-    },
-    {
-      "<leader>sq",
-      function()
-        require("dbee").close()
-      end,
-      desc = "Dbee close",
+      {
+        "<leader>sq",
+        function()
+          require("dbee").close()
+        end,
+        desc = "Dbee close",
+      },
     },
   },
 
