@@ -123,6 +123,7 @@ return {
       spec = {
         { "<leader>a", group = "AI/Copilot" },
         { "<leader>c", group = "Code" },
+        { "<leader>cg", group = "Golang" },
         { "<leader>f", group = "File find" },
         { "<leader>fg", group = "File find (Git)" },
         { "<leader>fe", group = "File find (environment)" },
@@ -130,6 +131,7 @@ return {
         { "<leader>g", group = "Git" },
         { "<leader>i", group = "Insert snippets" },
         { "<leader>ip", group = "Insert snippets (PHP)" },
+        { "<leader>m", group = "Markdown" },
         { "<leader>n", group = "Noice (notify)" },
         { "<leader>o", group = "Oil" },
         { "<leader>q", group = "Quit" },
