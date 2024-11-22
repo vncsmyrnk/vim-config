@@ -401,6 +401,11 @@ return {
   {
     "OXY2DEV/markview.nvim",
     lazy = false,
+    ft = "markdown",
+    keys = {
+      { "<leader>md", "<cmd>Markview disable<cr>", desc = "Markview: disable" },
+      { "<leader>me", "<cmd>Markview enable<cr>", desc = "Markview: enable" },
+    },
   },
 
   {
