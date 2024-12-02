@@ -411,6 +411,7 @@ return {
 
   {
     "kndndrj/nvim-dbee",
+    enabled = false,
     dependencies = {
       "MunifTanjim/nui.nvim",
     },
