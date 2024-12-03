@@ -1,6 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
+    event = "BufEnter",
     opts = {
       -- INFO: https://github.com/stevearc/conform.nvim?tab=readme-ov-file#options
       formatters = {

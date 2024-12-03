@@ -10,7 +10,8 @@ return {
 
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.8",
+    cmd = "Telescope",
+    branch = "0.1.x",
     dependencies = {
       { "nvim-telescope/telescope-live-grep-args.nvim", version = "^1.0.0" },
     },
@@ -112,7 +113,6 @@ return {
         desc = "Telescope: Git project files",
       },
     },
-    lazy = false,
   },
 
   {
@@ -265,11 +265,11 @@ return {
 
   {
     "stevearc/oil.nvim",
+    cmd = "Oil",
     opts = {},
     keys = {
       { "<leader>o", "<cmd>Oil --float<cr>", desc = "Oil opens current dir in a float window" },
     },
-    lazy = false,
   },
 
   {
@@ -389,16 +389,6 @@ return {
   },
 
   {
-    "akinsho/toggleterm.nvim",
-    enabled = false,
-    version = "*",
-    config = true,
-    keys = {
-      { "<leader>t", vim.cmd.ToggleTerm, desc = "Open terminal" },
-    },
-  },
-
-  {
     "OXY2DEV/markview.nvim",
     ft = "markdown",
     keys = {
@@ -409,42 +399,11 @@ return {
     },
   },
 
+  -- INFO: https://www.jetbrains.com/help/idea/exploring-http-syntax.html
   {
-    "kndndrj/nvim-dbee",
-    enabled = false,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-    },
-    build = function()
-      require("dbee").install()
-    end,
-    config = function()
-      require("dbee").setup({
-        sources = {
-          require("dbee.sources").EnvSource:new("DBEE_CONNECTIONS"),
-        },
-      })
-    end,
-    keys = {
-      {
-        "<leader>so",
-        function()
-          require("dbee").open()
-        end,
-        desc = "Dbee open",
-      },
-      {
-        "<leader>sq",
-        function()
-          require("dbee").close()
-        end,
-        desc = "Dbee close",
-      },
-    },
+    "rest-nvim/rest.nvim",
+    cmd = "Rest",
   },
 
-  -- INFO: https://www.jetbrains.com/help/idea/exploring-http-syntax.html
-  { "rest-nvim/rest.nvim" },
   { "sindrets/diffview.nvim" },
-  { "AndreM222/copilot-lualine" },
 }

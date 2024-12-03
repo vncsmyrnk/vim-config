@@ -1,7 +1,7 @@
 return {
   {
     "tpope/vim-fugitive",
-    lazy = false,
+    cmd = "Git",
     keys = {
       { "<leader>gs", "<cmd>Git<cr>", desc = "Fugitive: Git status" },
     },
@@ -30,6 +30,7 @@ return {
 
   {
     "pwntester/octo.nvim",
+    cmd = "Octo",
     config = function()
       require("octo").setup({
         default_remote = { "upstream", "origin" },

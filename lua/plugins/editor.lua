@@ -27,6 +27,7 @@ return {
 
   {
     "echasnovski/mini.pairs",
+    event = "BufEnter",
     config = function()
       require("mini.pairs").setup()
     end,
@@ -34,6 +35,7 @@ return {
 
   {
     "echasnovski/mini.surround",
+    event = "BufEnter",
     config = function()
       require("mini.surround").setup()
     end,
@@ -41,6 +43,7 @@ return {
 
   {
     "folke/todo-comments.nvim",
+    event = "BufEnter",
     opts = {},
   },
 }
