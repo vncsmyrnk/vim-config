@@ -12,6 +12,8 @@ if vim.fn.executable("rustc") == 1 then
   table.insert(must_install, "rust_analyzer")
 end
 
+-- INFO: https://lsp-zero.netlify.app/docs/guide/lazy-loading-with-lazy-nvim.html
+
 return {
   {
     "VonHeikemen/lsp-zero.nvim",
