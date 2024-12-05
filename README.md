@@ -8,8 +8,7 @@ To work properly this repo should be cloned/copied to `~/.config/nvim`.
 [lazy.nvim](https://github.com/folke/lazy.nvim) is used as a plugin manager.
 
 > [!NOTE]
-> [Latest nvim releases](https://github.com/neovim/neovim/releases) should be compatible with this configuration
-> Versions `0.10.x` guaranteed to work
+> [Latest nvim releases](https://github.com/neovim/neovim/releases) should be compatible with this configuration. Versions `0.10.x` guaranteed to work
 
 ## Install
 
