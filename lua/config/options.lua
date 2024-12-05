@@ -17,6 +17,7 @@ vim.opt.signcolumn = "yes:2"
 vim.opt.relativenumber = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.equalalways = false
 
 -- Displays tab/space, trailing whitespace
 vim.o.list = true
