@@ -3,6 +3,8 @@
 
 # myconfig.nvim 💻
 
+This is my [nvim](https://neovim.io/) config.
+
 To work properly this repo should be cloned/copied to `~/.config/nvim`.
 
 [lazy.nvim](https://github.com/folke/lazy.nvim) is used as a plugin manager.
