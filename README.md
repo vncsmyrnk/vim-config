@@ -3,14 +3,13 @@
 
 # myconfig.nvim 💻
 
-This is my local vim/nvim config using lua.
-
 To work properly this repo should be cloned/copied to `~/.config/nvim`.
 
 [lazy.nvim](https://github.com/folke/lazy.nvim) is used as a plugin manager.
 
 > [!NOTE]
-> Neovim versions `0.9` and `0.10` are compatible with this configuration.
+> [Latest nvim releases](https://github.com/neovim/neovim/releases) should be compatible with this configuration
+> Versions `0.10.x` guaranteed to work
 
 ## Install
 
