@@ -20,5 +20,5 @@ vim.opt.smartcase = true
 vim.opt.equalalways = false
 
 -- Displays tab/space, trailing whitespace
-vim.o.list = true
-vim.o.listchars = "tab:→\\ ,trail:~,extends:>,precedes:<,space:·"
+vim.opt.list = true
+vim.opt.listchars = "tab:→\\ ,trail:~,extends:>,precedes:<,space:·"
