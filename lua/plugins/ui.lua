@@ -377,7 +377,7 @@ return {
               action = "Telescope find_files follow=true cwd=.",
               key = "f",
             },
-            { desc = "⎚ Empty file", group = "DashboardMruTitle", action = "e newfile", key = "e" },
+            { desc = "⎚ Empty file", group = "DashboardMruTitle", action = "e /tmp/newfile", key = "e" },
           },
           packages = { enable = true },
           project = { enable = true, limit = 8, label = "Recent projects", action = "Telescope find_files cwd=" },
