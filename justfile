@@ -23,7 +23,7 @@ config:
 config-gh:
   if [[ ! $(gh auth status) ]]; then gh auth login; fi
 
-delete-config:
+unset-config:
   stow -D -t {{home_dir()}}/.config/nvim .
 
 clean-lazy:
