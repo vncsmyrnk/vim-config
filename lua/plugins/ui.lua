@@ -270,6 +270,7 @@ return {
     keys = {
       { "<leader>o", "<cmd>Oil --float<cr>", desc = "Oil opens current dir in a float window" },
     },
+    lazy = false,
   },
 
   {
