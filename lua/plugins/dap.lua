@@ -66,6 +66,33 @@ return {
           host = "127.0.0.1",
         },
       }
+
+      dap.adapters.lldb = {
+        type = "executable",
+        command = "/usr/bin/lldb-dap",
+        name = "lldb",
+      }
+
+      dap.configurations.rust = {
+        {
+          type = "lldb",
+          name = "Launch",
+          request = "launch",
+          program = function()
+            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+          end,
+          cwd = "${workspaceFolder}",
+          stopOnEntry = false,
+          args = {},
+        },
+        {
+          type = "lldb",
+          name = "Attach",
+          request = "attach",
+          port = "2345",
+          host = "127.0.0.1",
+        },
+      }
     end,
     keys = {
       {
