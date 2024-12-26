@@ -20,7 +20,7 @@ return {
       },
       format_on_save = function(bufnr)
         -- INFO: https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md
-        local ignore_filetypes = {}
+        local ignore_filetypes = { "php" }
         if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
           return
         end
