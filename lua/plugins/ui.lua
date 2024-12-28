@@ -37,6 +37,15 @@ return {
         desc = "Telescope: Fuzzy finder",
       },
       {
+        "<leader>fF",
+        function()
+          require("telescope.builtin").find_files({
+            find_command = { "fd", "--hidden" },
+          })
+        end,
+        desc = "Telescope: Fuzzy finder (hidden files)",
+      },
+      {
         "<leader>fa",
         function()
           require("telescope").extensions.live_grep_args.live_grep_args()
