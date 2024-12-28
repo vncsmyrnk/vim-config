@@ -147,6 +147,7 @@ return {
         { "<leader>n", group = "Noice (notify)" },
         { "<leader>o", group = "Oil" },
         { "<leader>q", group = "Quit" },
+        { "<leader>r", group = "Rest" },
         { "<leader>s", group = "SQL" },
         { "<leader>t", group = "Tabs" },
 
@@ -434,6 +435,10 @@ return {
   {
     "rest-nvim/rest.nvim",
     cmd = "Rest",
+    keys = {
+      { "<leader>rr", "<cmd>Rest run<cr>", desc = "Rest: run" },
+      { "<leader>rh", "<cmd>hor Rest run<cr>", desc = "Rest: run (open above)" },
+    },
   },
 
   { "sindrets/diffview.nvim" },
