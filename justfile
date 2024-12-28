@@ -6,11 +6,11 @@ default:
 install-deps:
   #!/bin/bash
   if [ "{{os}}" = "Debian GNU/Linux" ] || [ "{{os}}" = "Ubuntu" ]; then
-    sudo apt-get install build-essential curl tar git ripgrep stow xclip
+    sudo apt-get install build-essential curl tar git ripgrep stow xclip fd-find
     if ! type brew; then /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; fi
     brew install luarocks neovim gh lazygit
   elif [ "{{os}}" = "Arch Linux" ]; then
-    sudo pacman -S base-devel curl tar git ripgrep stow luarocks neovim github-cli xclip lazygit
+    sudo pacman -S base-devel curl tar git ripgrep stow luarocks neovim github-cli xclip lazygit fd
   fi
 
 install: install-deps config config-gh
