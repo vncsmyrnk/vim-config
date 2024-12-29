@@ -40,7 +40,7 @@ return {
         "<leader>fF",
         function()
           require("telescope.builtin").find_files({
-            find_command = { "fd", "--hidden" },
+            find_command = { "fd", "--hidden", "-E", ".git" },
           })
         end,
         desc = "Telescope: Fuzzy finder (hidden files)",
